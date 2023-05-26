@@ -18,9 +18,9 @@ class ReservaInteresadoController {
     public function add() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nombre = $_POST['nombre'];
-            $precioTotal = $_POST['precio_total'];
-            $fkidUsuario = $_POST['fk_id_usuario'];
-            $fkidServicio = $_POST['fk_id_servicio'];
+            $precioTotal = $_POST['preciototal'];
+            $fkidUsuario = $_POST['fkidusuario'];
+            $fkidServicio = $_POST['fkidservicio'];
 
             $reservaInteresado = new ReservaInteresado();
             $reservaInteresado->setNombre($nombre);
@@ -41,9 +41,9 @@ class ReservaInteresadoController {
     public function edit($id) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nombre = $_POST['nombre'];
-            $precioTotal = $_POST['precio_total'];
-            $fkidUsuario = $_POST['fk_id_usuario'];
-            $fkidServicio = $_POST['fk_id_servicio'];
+            $precioTotal = $_POST['preciototal'];
+            $fkidUsuario = $_POST['fkidusuario'];
+            $fkidServicio = $_POST['fkidservicio'];
 
             $reservaInteresado = new ReservaInteresado();
             $reservaInteresado->setId($id);
