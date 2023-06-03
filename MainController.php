@@ -86,7 +86,14 @@ switch ($action) {
     case 'proveedor-delete':
         $proveedorController->delete($id);
         break;
-
+    // Login
+    case 'login-user':
+        include("View/Pagina/login.php");
+        break;
+    // Pagina Web
+    case 'main-index':
+        include("View/Pagina/index.php");
+        break;
     default:
         header("location:index.php");
         break;
