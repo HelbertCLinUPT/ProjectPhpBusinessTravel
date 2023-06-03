@@ -16,10 +16,11 @@
           <div class="row">
             <div class="col">
               <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Paquetes</a></li>
-                <li><a href="#">Ofertas</a></li>
+                <li><a href="MainController.php?action=main-index">Home</a></li>
+                <li><a href="MainController.php?action=page-nosotros">Nosotros</a></li>
+                <li><a href="MainController.php?action=page-paquetes">Paquetes</a></li>
+                <li><a href="MainController.php?action=page-ofertas">Ofertas</a></li>
+                <li><a href="MainController.php?action=page-contactanos">Contactanos</a></li>
               </ul>
             </div>
             <div class="col">

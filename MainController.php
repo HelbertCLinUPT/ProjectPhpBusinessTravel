@@ -90,9 +90,28 @@ switch ($action) {
     case 'login-user':
         include("View/Pagina/login.php");
         break;
-    // Pagina Web
+    case 'login-register':
+        include("View/Pagina/register.php");
+        break;
+    // Pagina Web Links
     case 'main-index':
         include("View/Pagina/index.php");
+        break;
+    case 'page-nosotros':
+        include("View/Pagina/nosotros.php");
+        break;
+    case 'page-ofertas':
+        include("View/Pagina/ofertas.php");
+        break;
+    case 'page-paquetes':
+        include("View/Pagina/paquetes.php");
+        break;
+    case 'page-contactanos':
+        include("View/Pagina/contactanos.php");
+        break;
+    // Admin
+    case 'admin-index':
+        include("View/index.php");
         break;
     default:
         header("location:index.php");

@@ -7,20 +7,20 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Dashboard</title>
-    <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="View/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link href="static/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="View/static/css/sb-admin-2.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
     <div id="wrapper">
         <?php
-        include './header/lateralDashboard.php';
+        include 'View/header/lateralDashboard.php';
         ?>
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
                 <?php
-                include './header/headerDashboard.php';
+                include 'View/header/headerDashboard.php';
                 ?>
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -113,7 +113,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="text-center">
-                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="static/img/undraw_posting_photo.svg" alt="...">
+                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="View/static/img/undraw_posting_photo.svg" alt="...">
                                     </div>
                                     <p>Add some quality, svg illustrations to your project courtesy of a
                                         constantly updated collection of beautiful svg images that you can use
@@ -131,9 +131,9 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-    <script src="static/vendor/jquery/jquery.min.js"></script>
-    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="static/js/sb-admin-2.min.js"></script>
+    <script src="View/static/vendor/jquery/jquery.min.js"></script>
+    <script src="View/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="View/static/js/sb-admin-2.min.js"></script>
 
 </body>
 

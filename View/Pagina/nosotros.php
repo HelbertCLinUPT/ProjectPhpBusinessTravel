@@ -7,16 +7,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Safario Travel - About</title>
   <link rel="icon" href="img/Fevicon.png" type="image/png">
-
-  <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="vendors/nice-select/nice-select.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="View/Pagina/vendors/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="View/Pagina/vendors/nice-select/nice-select.css">
+  <link rel="stylesheet" href="View/Pagina/css/style.css">
 </head>
 
 <body>
 
   <?php
-  include '../header/headerPagina.php';
+  include 'View/header/headerPagina.php';
   ?>
 
   <!--================Hero Banner SM Area Start =================-->
@@ -28,8 +27,7 @@
       </div>
     </div>
   </section>
-  <!--================Hero Banner SM Area End =================-->
-  <!--================About Area Start =================-->
+
   <section class="section-padding magic-ball magic-ball-sm magic-ball-about">
     <div class="container">
       <div class="row">
@@ -48,9 +46,7 @@
       </div>
     </div>
   </section>
-  <!--================About Area End =================-->
 
-  <!--================Search Package section Start =================-->
   <section class="section-margin">
     <div class="container">
       <div class="row">
@@ -60,7 +56,7 @@
               your tour</h2>
             <p>Make she'd moved divided air. Whose tree that replenish tone hath own upon them it multiply was blessed
               is lights make gathering so day dominion so creeping</p>
-            <a class="button" href="login.php">Mas informacion</a>
+            <a class="button" href="MainController.php?action=login-user">Mas informacion</a>
           </div>
         </div>
         <div class="col-lg-6 col-xl-6 offset-xl-1">
@@ -117,7 +113,7 @@
 
 
   <?php
-  include '../header/footerPagina.php';
-  ?>
+   include 'View/header/footerPagina.php';
+   ?>
 </body>
 </html>

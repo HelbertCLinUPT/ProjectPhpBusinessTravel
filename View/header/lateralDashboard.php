@@ -1,12 +1,12 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="MainController.php?action=admin-index">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-plane"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Business Travel</div>
             </a>
             <li class="nav-item active">
-                <a class="nav-link" href="index.php">
+                <a class="nav-link" href="MainController.php?action=admin-index">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -22,13 +22,13 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Servicios:</h6>
-                        <a class="collapse-item" href="../MainController.php?action=paquete-index">Paquete Turistico</a>`
-                        <a class="collapse-item" href="../MainController.php?action=servicio-index">Servicio</a>
+                        <a class="collapse-item" href="MainController.php?action=paquete-index">Paquete Turistico</a>`
+                        <a class="collapse-item" href="MainController.php?action=servicio-index">Servicio</a>
                         <!-- <a class="collapse-item" href="utilities-other.php">Ofertas</a> -->
                         <h6 class="collapse-header">Personas:</h6>
                         <a class="collapse-item" href="MainController.php?action=usuario-index">Usuario</a>
-                        <a class="collapse-item" href="../MainController.php?action=proveedor-index">Proveedor</a>
-                        <a class="collapse-item" href="../MainController.php?action=interesado-index">Interesado</a>
+                        <a class="collapse-item" href="MainController.php?action=proveedor-index">Proveedor</a>
+                        <a class="collapse-item" href="MainController.php?action=interesado-index">Interesado</a>
                     </div>
                 </div>
             </li>
