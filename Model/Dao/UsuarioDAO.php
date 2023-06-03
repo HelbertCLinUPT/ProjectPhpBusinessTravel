@@ -20,6 +20,8 @@ class UsuarioDAO implements UsuarioDAOInterface{
                 $usuario->setApellido($row['apellido']);
                 $usuario->setNumeroCelular($row['numeroCelular']);
                 $usuario->setRol($row['rol']);
+                $usuario->setEmail($row['email']);
+
                 $usuarios[] = $usuario;
             }
         }
@@ -35,8 +37,9 @@ class UsuarioDAO implements UsuarioDAOInterface{
         $numeroCelular = $usuario->getNumeroCelular();
         $rol = $usuario->getRol();
         $password = $usuario->getPassword();
+        $email=$usuario->getEmail();
 
-        $query = "INSERT INTO usuarios (nombre, apellido, numeroCelular, rol, password) VALUES ('$nombre', '$apellido', '$numeroCelular', '$rol','$password')";
+        $query = "INSERT INTO usuarios (nombre, apellido, numeroCelular, rol, password,email) VALUES ('$nombre', '$apellido', '$numeroCelular', '$rol','$password','$email')";
         if ($conn->query($query) === TRUE) {
             return true;
         } else {
@@ -58,6 +61,7 @@ class UsuarioDAO implements UsuarioDAOInterface{
             $usuario->setApellido($row['apellido']);
             $usuario->setNumeroCelular($row['numeroCelular']);
             $usuario->setRol($row['rol']);
+            $usuario->setEmail($row['email']);
             return $usuario;
         } else {
             return null;
@@ -73,8 +77,10 @@ class UsuarioDAO implements UsuarioDAOInterface{
         $numeroCelular = $usuario->getNumeroCelular();
         $password = $usuario->getPassword();
         $rol = $usuario->getRol();
+        $email = $usuario->getEmail();
 
-        $query = "UPDATE usuarios SET nombre='$nombre', apellido='$apellido', numeroCelular='$numeroCelular', rol='$rol' , password='$password' WHERE id=$id";
+
+        $query = "UPDATE usuarios SET nombre='$nombre', apellido='$apellido', numeroCelular='$numeroCelular', rol='$rol' , password='$password' , email='$email' WHERE id=$id";
         if ($conn->query($query) === TRUE) {
             return true;
         } else {

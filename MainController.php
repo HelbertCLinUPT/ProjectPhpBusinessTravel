@@ -2,12 +2,14 @@
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 $id = isset($_GET['id']) ? $_GET['id'] : null;
 
+
 // Include necessary controller files
 require_once 'Controller/UsuarioController.php';
 require_once 'Controller/PaqueteTuristicoController.php';
 require_once 'Controller/ReservaInteresadoController.php';
 require_once 'Controller/ServicioController.php';
 require_once 'Controller/ProveedorController.php';
+require_once 'Controller/LoginController.php';
 
 // Create controller instances
 $usuarioController = new UsuarioController();
@@ -15,9 +17,10 @@ $paqueteTuristicoController = new PaqueteTuristicoController();
 $reservaInteresadoController = new ReservaInteresadoController();
 $servicioController = new ServicioController();
 $proveedorController = new ProveedorController();
+$loginController = new LoginController();
 
 switch ($action) {
-    // User-related actions
+        // User-related actions
     case 'usuario-index':
         $usuarioController->index();
         break;
@@ -31,7 +34,7 @@ switch ($action) {
         $usuarioController->delete($id);
         break;
 
-    // PaqueteTuristico-related actions
+        // PaqueteTuristico-related actions
     case 'paquete-index':
         $paqueteTuristicoController->index();
         break;
@@ -45,7 +48,7 @@ switch ($action) {
         $paqueteTuristicoController->delete($id);
         break;
 
-    // ReservaInteresado-related actions
+        // ReservaInteresado-related actions
     case 'interesado-index':
         $reservaInteresadoController->index();
         break;
@@ -59,7 +62,7 @@ switch ($action) {
         $reservaInteresadoController->delete($id);
         break;
 
-    // Servicio-related actions
+        // Servicio-related actions
     case 'servicio-index':
         $servicioController->index();
         break;
@@ -73,7 +76,7 @@ switch ($action) {
         $servicioController->delete($id);
         break;
 
-    // Proveedor-related actions
+        // Proveedor-related actions
     case 'proveedor-index':
         $proveedorController->index();
         break;
@@ -86,14 +89,18 @@ switch ($action) {
     case 'proveedor-delete':
         $proveedorController->delete($id);
         break;
-    // Login
+        // Login
     case 'login-user':
-        include("View/Pagina/login.php");
+        $loginController->index();
+        break;
+    case 'login-ingresar':
+        $loginController->ingresar();
         break;
     case 'login-register':
         include("View/Pagina/register.php");
         break;
-    // Pagina Web Links
+
+        // Pagina Web Links
     case 'main-index':
         include("View/Pagina/index.php");
         break;
@@ -109,7 +116,8 @@ switch ($action) {
     case 'page-contactanos':
         include("View/Pagina/contactanos.php");
         break;
-    // Admin
+
+        // Admin
     case 'admin-index':
         include("View/index.php");
         break;
@@ -117,4 +125,3 @@ switch ($action) {
         header("location:index.php");
         break;
 }
-?>

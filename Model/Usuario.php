@@ -7,6 +7,7 @@ class Usuario {
     private $password;
     private $numeroCelular;
     private $rol;
+    private $email;
     
 
     public function getId() {
@@ -57,5 +58,15 @@ class Usuario {
     public function setRol($rol) {
         $this->rol = $rol;
     }
+
+    public function getEmail() {
+        return $this->email;
+    }
+
+    public function setEmail($email) {
+        $this->email = $email;
+    }
+
+
 }
 ?>

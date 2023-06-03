@@ -55,16 +55,26 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
+                                                <label for="rol" class="col-sm-3 col-form-label">Email:</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="email" value="<?php echo $usuario->getEmail(); ?>" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
                                                 <label for="rol" class="col-sm-3 col-form-label">Rol:</label>
                                                 <div class="col-sm-9">
                                                     <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="rol" value="<?php echo $usuario->getRol(); ?>" required>
                                                 </div>
                                             </div>
+                                            
+
                                             <div class="form-group row">
                                                 <div class="col-sm-9 offset-sm-3">
                                                     <input type="submit" value="Actualizar" style="font-size: 18px;" class="btn btn-primary btn-user btn-block">
                                                 </div>
                                             </div>
+
                                             <hr>
                                         </form>
                                     </div>

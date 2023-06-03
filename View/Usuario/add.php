@@ -47,11 +47,18 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="numero_celular" class="col-sm-3 col-form-label">Número de Celular:</label>
+                                                <label for="numeroCelular" class="col-sm-3 col-form-label">Número de Celular:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="numero_celular">
+                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="numeroCelular">
                                                 </div>
                                             </div>
+                                            <div class="form-group row">
+                                                <label for="email" class="col-sm-3 col-form-label">Número de Celular:</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="email">
+                                                </div>
+                                            </div>
+
                                             <div class="form-group row">
                                                 <label for="rol" class="col-sm-3 col-form-label">Rol:</label>
                                                 <div class="col-sm-9">
@@ -63,6 +70,7 @@
                                                     <input type="submit" value="Agregar" style="font-size: 18px;" class="btn btn-primary btn-user btn-block">
                                                 </div>
                                             </div>
+                                            
                                             <hr>
                                         </form>
 

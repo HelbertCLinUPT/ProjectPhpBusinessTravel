@@ -51,6 +51,7 @@
                                             <th>Nombre</th>
                                             <th>Apellido</th>
                                             <th>Número de Celular</th>
+                                            <th>Email</th>
                                             <th>Rol</th>
                                             <th>Acciones</th>
                                         </tr>
@@ -62,7 +63,9 @@
                                                 <td><?php echo $usuario->getNombre(); ?></td>
                                                 <td><?php echo $usuario->getApellido(); ?></td>
                                                 <td><?php echo $usuario->getNumeroCelular(); ?></td>
+                                                <td><?php echo $usuario->getEmail(); ?></td>
                                                 <td><?php echo $usuario->getRol(); ?></td>
+
                                                 <td class="col-2">
                                                     <a href="MainController.php?action=usuario-edit&id=<?php echo $usuario->getId(); ?>" class="btn btn-warning btn-circle">
                                                         <i class="fas fa-pencil-alt"></i>

@@ -25,6 +25,7 @@ class UsuarioController
             $usuario->setApellido($_POST['apellido']);
             $usuario->setNumeroCelular($_POST['numeroCelular']);
             $usuario->setRol($_POST['rol']);
+            $usuario->setEmail($_POST['email']);
 
             if ($this->usuarioDAO->addUsuario($usuario)) {
                 header('Location: MainController.php?action=usuario-index');
@@ -48,11 +49,12 @@ class UsuarioController
                 $usuario->setApellido($_POST['apellido']);
                 $usuario->setNumeroCelular($_POST['numeroCelular']);
                 $usuario->setRol($_POST['rol']);
+                $usuario->setEmail($_POST['email']);
 
                 if ($this->usuarioDAO->updateUsuario($usuario)) {
                     header('Location: MainController.php?action=usuario-index');
                 } else {
-                    echo 'Error updating the servicio.';
+                    echo 'Error updating the usuario.';
                 }
 
             } else {
@@ -66,9 +68,11 @@ class UsuarioController
         if ($this->usuarioDAO->deleteUsuario($id)) {
             header('Location: MainController.php?action=usuario-index');
         } else {
-            echo 'Error deleting the servicio.';
+            echo 'Error deleting the usuario.';
         }
 
     }
+
+
 }
 ?>
