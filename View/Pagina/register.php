@@ -25,23 +25,33 @@
                 <h2 class="text-center text-4xl text-indigo-900 font-display font-semibold lg:text-left xl:text-5xl
                     xl:text-bold">Sign Up</h2>
                 <div class="mt-12">
-                    <form action="MainController.php?action=admin-index" method="post">
-                        <div>
-                            <div class="text-sm font-bold text-gray-700 tracking-wide">Full Name</div>
-                            <input class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="Enter your full name">
+                    <form action="MainController.php?action=usuario-add" method="post">
+                        <div >
+                            <div class="text-sm font-bold text-gray-700 tracking-wide">Nombre</div>
+                            <input name="nombre" class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="Enter your full name">
+                        </div>
+                        <div class="mt-8">
+                            <div class="text-sm font-bold text-gray-700 tracking-wide">Apellido</div>
+                            <input name="apellido" class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="Enter your full name">
+                        </div>
+                        <div class="mt-8">
+                            <div class="text-sm font-bold text-gray-700 tracking-wide">Numero de contacto</div>
+                            <input name="numeroCelular" class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="Ingresar su telefono">
                         </div>
                         <div class="mt-8">
                             <div class="text-sm font-bold text-gray-700 tracking-wide">Email</div>
-                            <input class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="Example@gmail.com">
+                            <input name="email" class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="Example@gmail.com">
                         </div>
+
                         <div class="mt-8">
                             <div class="flex justify-between items-center">
                                 <div class="text-sm font-bold text-gray-700 tracking-wide">
-                                    Password
+                                    Contraseña
                                 </div>
                             </div>
-                            <input class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="password" placeholder="Enter your password">
+                            <input name="password"  class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="password" placeholder="Enter your password">
                         </div>
+                        <input type="hidden" name="rol" value="1">
                         <div class="mt-10">
                             <button class="bg-indigo-500 text-gray-100 p-4 w-full rounded-full tracking-wide font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-indigo-600 shadow-lg">
                                 Sign Up

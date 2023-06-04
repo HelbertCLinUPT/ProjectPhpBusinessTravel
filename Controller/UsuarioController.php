@@ -26,6 +26,7 @@ class UsuarioController
             $usuario->setNumeroCelular($_POST['numeroCelular']);
             $usuario->setRol($_POST['rol']);
             $usuario->setEmail($_POST['email']);
+            $usuario->setPassword($_POST['password']);
 
             if ($this->usuarioDAO->addUsuario($usuario)) {
                 header('Location: MainController.php?action=usuario-index');

@@ -66,6 +66,13 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
+                                                <label for="rol" class="col-sm-3 col-form-label">Contraseña:</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;"  name="password">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
                                                 <div class="col-sm-9 offset-sm-3">
                                                     <input type="submit" value="Agregar" style="font-size: 18px;" class="btn btn-primary btn-user btn-block">
                                                 </div>

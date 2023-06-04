@@ -1,6 +1,6 @@
 <?php
 
 interface LoginDaoInterface {
-    public function Ingresar($usuario);
+    public function Ingresar(Usuario $usuario);
 }
 ?>
