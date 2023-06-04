@@ -29,11 +29,18 @@ class LoginController
 
                 header('Location: MainController.php?action=admin-index');
             } else {
-                echo "Error ingresando.";
+                //echo "Error ingresando.";
+                include 'View/Pagina/login.php';
             }
         } else
             include 'View/Pagina/login.php';
     }
+    
+    public function salir()
+    {
+        session_destroy();
+    }
+
     
 }
 ?>
