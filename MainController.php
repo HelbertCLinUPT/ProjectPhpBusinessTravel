@@ -96,6 +96,10 @@ switch ($action) {
     case 'login-ingresar':
         $loginController->ingresar();
         break;
+    case 'login-logout':
+        $loginController->salir();
+        break;
+
     case 'login-register':
         include("View/Pagina/register.php");
         break;

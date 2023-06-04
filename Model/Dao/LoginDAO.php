@@ -25,7 +25,7 @@ class LoginDAO implements LoginDaoInterface{
             return $usuario;
         }
 
-        return false;
+        return null;
     }
 
 }

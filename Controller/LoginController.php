@@ -35,7 +35,13 @@ class LoginController
                 $_SESSION['rol'] = $usuario->getRol();
                 $_SESSION['email'] = $usuario->getEmail();
 
-                header('Location: MainController.php?action=admin-index');
+                if($_SESSION['rol']==2){
+                    header('Location: MainController.php?action=admin-index');
+                }else{
+                    header('Location: MainController.php?action=main-index');
+                }
+               
+
             } else {
                 //echo "Error ingresando.";
                 include 'View/Pagina/login.php';
@@ -46,6 +52,8 @@ class LoginController
 
     public function salir()
     {
+        session_start();
         session_destroy();
+        include 'View/Pagina/login.php';
     }
 }

@@ -1,5 +1,12 @@
 <?php
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+if ($_SESSION['rol'] != 2) {
+    header("Location:index.php");
+    exit();
+}
 
 ?>
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -42,7 +49,7 @@ session_start();
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="MainController.php?action=login-user">Logout</a>
+                <a class="btn btn-primary" href="MainController.php?action=login-logout">Logout</a>
             </div>
         </div>
     </div>

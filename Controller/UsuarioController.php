@@ -29,7 +29,15 @@ class UsuarioController
             $usuario->setPassword($_POST['password']);
 
             if ($this->usuarioDAO->addUsuario($usuario)) {
-                header('Location: MainController.php?action=usuario-index');
+                if(isset($_SESSION)){
+                    header('Location: MainController.php?action=usuario-index');
+                }else{
+                    header('Location: MainController.php?action=login-index');
+                }
+
+                
+
+
             } else {
                 echo "Error adding usuario.";
             }
