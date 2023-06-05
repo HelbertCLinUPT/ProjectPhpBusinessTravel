@@ -25,10 +25,10 @@
                 include 'View/header/headerDashboard.php';
                 ?>
                 <div class="container-fluid">
-                    <h1 class="h3 mb-2 text-gray-800">Gestión de Servicios</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Gestión de Pedidos</h1>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3 d-flex align-items-center">
-                            <a href="MainController.php?action=servicio-add" class="text-decoration-none">
+                            <a href="MainController.php?action=pedido-add" class="text-decoration-none">
                                 <div class="d-flex align-items-center">
                                     <button class="btn btn-primary">
                                         <i class="fas fa-plus-circle mr-2"></i>
@@ -40,7 +40,7 @@
                     </div>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Servicios</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Pedidos</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -48,23 +48,29 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
+                                            <th>Fecha Solicitud</th>
+                                            <th>Fecha Destino</th>
                                             <th>Costo</th>
-                                            <th>ID Proveedor</th>
+                                            <th>Destino</th>
+                                            <th>ID Usuario</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($servicios as $servicio) : ?>
+                                        <?php foreach ($pedidos as $pedido) : ?>
                                             <tr>
-                                                <td><?php echo $servicio->getId(); ?></td>
-                                                <td><?php echo $servicio->getCosto(); ?></td>
-                                                <td><?php echo $servicio->getFkidProveedor(); ?></td>
+                                                <td><?php echo $pedido->getId(); ?></td>
+                                                <td><?php echo $pedido->getFechaSolicitud(); ?></td>
+                                                <td><?php echo $pedido->getFechaDestino(); ?></td>
+                                                <td><?php echo $pedido->getCosto(); ?></td>
+                                                <td><?php echo $pedido->getDestino(); ?></td>
+                                                <td><?php echo $pedido->getFkIdUsuario(); ?></td>
 
                                                 <td class="col-2">
-                                                    <a href="MainController.php?action=servicio-edit&id=<?php echo $servicio->getId(); ?>" class="btn btn-warning btn-circle">
+                                                    <a href="MainController.php?action=pedido-edit&id=<?php echo $pedido->getId(); ?>" class="btn btn-warning btn-circle">
                                                         <i class="fas fa-pencil-alt"></i>
                                                     </a>
-                                                    <button class="btn btn-danger btn-circle delete-button" data-id="<?php echo $servicio->getId(); ?>">
+                                                    <button class="btn btn-danger btn-circle delete-button" data-id="<?php echo $pedido->getId(); ?>">
                                                         <i class="fas fa-trash"></i>
                                                     </button>
                                                 </td>
@@ -83,6 +89,7 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
+
 
     <!-- Bootstrap core JavaScript-->
     <script src="View/static/vendor/jquery/jquery.min.js"></script>

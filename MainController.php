@@ -3,21 +3,24 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 $id = isset($_GET['id']) ? $_GET['id'] : null;
 
 
-// Include necessary controller files
+// Controladores
 require_once 'Controller/UsuarioController.php';
 require_once 'Controller/PaqueteTuristicoController.php';
 require_once 'Controller/ReservaInteresadoController.php';
 require_once 'Controller/ServicioController.php';
 require_once 'Controller/ProveedorController.php';
 require_once 'Controller/LoginController.php';
+require_once 'Controller/PedidoController.php';
 
-// Create controller instances
+
+// Instancias
 $usuarioController = new UsuarioController();
 $paqueteTuristicoController = new PaqueteTuristicoController();
 $reservaInteresadoController = new ReservaInteresadoController();
 $servicioController = new ServicioController();
 $proveedorController = new ProveedorController();
 $loginController = new LoginController();
+$PedidoController = new PedidoController();
 
 switch ($action) {
         // User-related actions
@@ -33,6 +36,21 @@ switch ($action) {
     case 'usuario-delete':
         $usuarioController->delete($id);
         break;
+
+        // Pedido-related actions
+    case 'pedido-index':
+        $PedidoController->index();
+        break;
+    case 'pedido-add':
+        $PedidoController->add();
+        break;
+    case 'pedido-edit':
+        $PedidoController->edit($id);
+        break;
+    case 'pedido-delete':
+        $PedidoController->delete($id);
+        break;
+
 
         // PaqueteTuristico-related actions
     case 'paquete-index':

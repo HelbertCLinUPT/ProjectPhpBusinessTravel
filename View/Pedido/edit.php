@@ -11,6 +11,8 @@
     <link href="View/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="View/static/css/sb-admin-2.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body id="page-top">
@@ -24,50 +26,55 @@
                 include 'View/header/headerDashboard.php';
                 ?>
                 <div class="container-fluid">
-                    <h1 class="h3 mb-2 text-gray-800">Gestión de Interesados en Reservas</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Gestión de Pedidos</h1>
                     <div class="card shadow mb-4">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-lg-7 w-100">
                                     <div class="p-5">
                                         <div class="text-center">
-                                            <h1 class="h4 text-gray-900 mb-4">Agregar Interesado en Reserva</h1>
+                                            <h1 class="h4 text-gray-900 mb-4">Editar pedido</h1>
                                         </div>
-                                        <form class="user" method="POST" action="MainController.php?action=interesado-add">
+                                        <form class="user" method="POST" action="MainController.php?action=pedido-edit&id=<?php echo $pedido->getId(); ?>" id="edit-form">
                                             <div class="form-group row">
-                                                <label for="nombre" class="col-sm-3 col-form-label">Nombre:</label>
+                                                <label for="fechaSolicitud" class="col-sm-3 col-form-label">Fecha de Solicitud:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control form-control-user" name="nombre" style="font-size: 18px;" required>
+                                                    <input type="date" class="form-control form-control-user" name="fechaSolicitud" style="font-size: 18px;" value="<?php echo $pedido->getFechaSolicitud(); ?>" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="preciototal" class="col-sm-3 col-form-label">Precio Total:</label>
+                                                <label for="fechaDestino" class="col-sm-3 col-form-label">Fecha de Destino:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="preciototal">
+                                                    <input type="date" class="form-control form-control-user" style="font-size: 18px;" name="fechaDestino" value="<?php echo $pedido->getFechaDestino(); ?>" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="fkidusuario" class="col-sm-3 col-form-label">ID Usuario:</label>
+                                                <label for="costo" class="col-sm-3 col-form-label">Costo:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="fkidusuario">
+                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="costo" value="<?php echo $pedido->getCosto(); ?>" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="fkidservicio" class="col-sm-3 col-form-label">ID Servicio:</label>
+                                                <label for="destino" class="col-sm-3 col-form-label">Destino:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="fkidservicio">
+                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="destino" value="<?php echo $pedido->getDestino(); ?>" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="fkIdUsuario" class="col-sm-3 col-form-label">ID de Usuario:</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="fkIdUsuario" value="<?php echo $pedido->getFkIdUsuario(); ?>" required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <div class="col-sm-9 offset-sm-3">
-                                                    <input type="submit" value="Agregar" style="font-size: 18px;" class="btn btn-primary btn-user btn-block">
+                                                    <input type="submit" value="Actualizar" style="font-size: 18px;" class="btn btn-primary btn-user btn-block">
                                                 </div>
                                             </div>
-                                            
+
                                             <hr>
                                         </form>
-
                                     </div>
                                 </div>
                             </div>
@@ -92,6 +99,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="View/static/js/sb-admin-2.min.js"></script>
+    <script src="View/static/js/editar.js"></script>
 
 </body>
 

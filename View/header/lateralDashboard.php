@@ -22,8 +22,11 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Servicios:</h6>
-                        <a class="collapse-item" href="MainController.php?action=paquete-index">Paquete Turistico</a>`
+                        <a class="collapse-item" href="MainController.php?action=paquete-index">Paquete Turistico</a>
                         <a class="collapse-item" href="MainController.php?action=servicio-index">Servicio</a>
+                        <a class="collapse-item" href="MainController.php?action=pedido-index">Pedido</a>
+                        `
+
                         <!-- <a class="collapse-item" href="utilities-other.php">Ofertas</a> -->
                         <h6 class="collapse-header">Personas:</h6>
                         <a class="collapse-item" href="MainController.php?action=usuario-index">Usuario</a>
