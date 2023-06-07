@@ -1,23 +1,23 @@
-const deleteButtons = document.querySelectorAll('.delete-button');
+$(document).ready(function() {
+    // Capturar el evento click en el botón de eliminar
+    $('.delete-button').click(function() {
+        // Obtener el RUC del proveedor del atributo data-ruc del botón
+        var ruc = $(this).data('ruc');
 
-deleteButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const userId = button.dataset.id;
-
+        // Mostrar un diálogo de confirmación utilizando SweetAlert2
         Swal.fire({
             title: '¿Estás seguro?',
-            text: '¡No podrás revertir esto!',
+            text: 'Esta acción no se puede deshacer',
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Sí, eliminarlo'
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar'
         }).then((result) => {
             if (result.isConfirmed) {
-                const deleteUrl = `MainController.php?action=usuario-delete&id=${userId}`;
-                window.location.href = deleteUrl;
-            } else {
-
+                // Redireccionar a MainController.php para procesar la eliminación del proveedor
+                window.location.href = 'MainController.php?action=proveedor-delete&ruc=' + ruc;
             }
         });
     });

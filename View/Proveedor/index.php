@@ -61,7 +61,7 @@
                                                 <td><?php echo $proveedor->getPais(); ?></td>
 
                                                 <td class="col-2">
-                                                    <a href="MainController.php?action=proveedor-edit&ruc=<?php echo $proveedor->getRuc(); ?>" class="btn btn-warning btn-circle">
+                                                    <a href="MainController.php?action=proveedor-edit&id=<?php echo $proveedor->getRuc(); ?>" class="btn btn-warning btn-circle">
                                                         <i class="fas fa-pencil-alt"></i>
                                                     </a>
                                                     <button class="btn btn-danger btn-circle delete-button" data-ruc="<?php echo $proveedor->getRuc(); ?>">

@@ -25,25 +25,24 @@ class UsuarioController
             $usuario->setApellido($_POST['apellido']);
             $usuario->setNumeroCelular($_POST['numeroCelular']);
             $usuario->setRol($_POST['rol']);
-            $usuario->setEmail($_POST['email']);
             $usuario->setPassword($_POST['password']);
+            $usuario->setEmail($_POST['email']);
+        
 
             if ($this->usuarioDAO->addUsuario($usuario)) {
-                if(isset($_SESSION)){
+                if (isset($_SESSION)) {
                     header('Location: MainController.php?action=usuario-index');
-                }else{
+                } else {
                     header('Location: MainController.php?action=login-index');
                 }
-
-                
-
-
             } else {
                 echo "Error adding usuario.";
             }
-        } else
+        } else {
             include 'View/Usuario/add.php';
+        }
     }
+
 
     public function edit($id)
     {

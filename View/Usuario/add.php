@@ -53,22 +53,22 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="email" class="col-sm-3 col-form-label">Número de Celular:</label>
+                                                <label for="rol" class="col-sm-3 col-form-label">Rol:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="email">
+                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="rol">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
-                                                <label for="rol" class="col-sm-3 col-form-label">Rol:</label>
+                                                <label for="password" class="col-sm-3 col-form-label">Password:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;"  name="rol">
+                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;"  name="password">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="rol" class="col-sm-3 col-form-label">Contraseña:</label>
+                                                <label for="email" class="col-sm-3 col-form-label">Email:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;"  name="password">
+                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;"  name="email">
                                                 </div>
                                             </div>
 
