@@ -63,7 +63,7 @@
                                                 <td><?php echo $usuario->getId(); ?></td>
                                                 <td><?php echo $usuario->getNombre(); ?></td>
                                                 <td><?php echo $usuario->getApellido(); ?></td>
-                                                <td><?php echo $usuario->getPassword(); ?></td>
+                                                <td style="width: 100px;"><?php echo substr($usuario->getPassword(), 0, 20); ?>...</td>
                                                 <td><?php echo $usuario->getNumeroCelular(); ?></td>
                                                 <td><?php echo $usuario->getRol(); ?></td>
                                                 <td><?php echo $usuario->getEmail(); ?></td>

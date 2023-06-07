@@ -48,8 +48,10 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
+                                            <th>Nombre</th>
                                             <th>Costo</th>
                                             <th>ID Proveedor</th>
+                                            <th>Paquete Turistico</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
@@ -57,7 +59,9 @@
                                         <?php foreach ($servicios as $servicio) : ?>
                                             <tr>
                                                 <td><?php echo $servicio->getId(); ?></td>
+                                                <td><?php echo $servicio->getNombre(); ?></td>
                                                 <td><?php echo $servicio->getCosto(); ?></td>
+                                                <td><?php echo $servicio->getFkidPaqueteturistico(); ?></td>
                                                 <td><?php echo $servicio->getFkidProveedor(); ?></td>
 
                                                 <td class="col-2">

@@ -16,15 +16,15 @@ class ServicioController {
 
     public function add() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $costo = $_POST['costo'];
             $nombre = $_POST['nombre'];
-            $fkidPaquete= $_POST['fkidPaquete'];
+            $costo = $_POST['costo'];
+            $fkidPaqueteturistico= $_POST['fkidPaqueteturistico'];
             $fkidProveedor = $_POST['fkidProveedor'];
 
             $servicio = new Servicio();
             $servicio->setCosto($costo);
             $servicio->setnombre($nombre);
-            $servicio->setFkidPaqueteturistico($fkidPaquete);
+            $servicio->setFkidPaqueteturistico($fkidPaqueteturistico);
             $servicio->setFkidProveedor($fkidProveedor);
 
             if ($this->servicioDAO->addServicio($servicio)) {
@@ -40,16 +40,16 @@ class ServicioController {
     public function edit($id) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
-            $costo = $_POST['costo'];
             $nombre = $_POST['nombre'];
-            $fkidPaquete= $_POST['fkidPaquete'];
+            $costo = $_POST['costo'];
+            $fkidPaqueteturistico= $_POST['fkidPaqueteturistico'];
             $fkidProveedor = $_POST['fkidProveedor'];
 
             $servicio = new Servicio();
             $servicio->setId($id);
             $servicio->setCosto($costo);
             $servicio->setnombre($nombre);
-            $servicio->setFkidPaqueteturistico($fkidPaquete);
+            $servicio->setFkidPaqueteturistico($fkidPaqueteturistico);
             $servicio->setFkidProveedor($fkidProveedor);
 
             if ($this->servicioDAO->updateServicio($servicio)) {

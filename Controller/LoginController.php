@@ -49,6 +49,30 @@ class LoginController
         } else
             include 'View/Pagina/login.php';
     }
+    public function registrarse()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $usuario = new Usuario();
+            $usuario->setNombre($_POST['nombre']);
+            $usuario->setApellido($_POST['apellido']);
+            $usuario->setPassword($_POST['password']);
+            $usuario->setNumeroCelular($_POST['numeroCelular']);
+            $usuario->setRol($_POST['rol']);
+            $usuario->setEmail($_POST['email']);
+    
+            $registrado = $this->LoginDAO->Registrarse($usuario);
+    
+            if ($registrado) {
+                header('Location: MainController.php?action=login-ingresar');
+            } else {
+
+                echo "Error en el registro.";
+            }
+        } else {
+            include 'View/Pagina/register.php';
+        }
+    }
+    
 
     public function salir()
     {

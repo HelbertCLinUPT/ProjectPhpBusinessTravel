@@ -16,7 +16,9 @@ class ServicioDAO implements ServicioDAOInterface {
             while ($row = $result->fetch_assoc()) {
                 $servicio = new Servicio();
                 $servicio->setId($row['id']);
+                $servicio->setNombre($row['nombre']);
                 $servicio->setCosto($row['costo']);
+                $servicio->setFkidPaqueteturistico($row['fkidPaqueteTuristico']);
                 $servicio->setFkidProveedor($row['fkidProveedor']);
 
                 $servicios[] = $servicio;
@@ -29,10 +31,12 @@ class ServicioDAO implements ServicioDAOInterface {
     public function addServicio($servicio) {
         global $conn;
 
+        $nombre = $servicio->getNombre();
         $costo = $servicio->getCosto();
+        $fkidPaqueteturistico = $servicio->getFkidPaqueteturistico();
         $fkidProveedor = $servicio->getFkidProveedor();
 
-        $query = "INSERT INTO servicios (costo, fkidProveedor) VALUES ('$costo', '$fkidProveedor')";
+        $query = "INSERT INTO servicios (nombre,costo,fkidPaqueteTuristico, fkidProveedor) VALUES ('$nombre','$costo','$fkidPaqueteturistico', '$fkidProveedor')";
         if ($conn->query($query) === TRUE) {
             return true;
         } else {
@@ -50,9 +54,10 @@ class ServicioDAO implements ServicioDAOInterface {
             $row = $result->fetch_assoc();
             $servicio = new Servicio();
             $servicio->setId($row['id']);
+            $servicio->setNombre($row['nombre']);
             $servicio->setCosto($row['costo']);
+            $servicio->setFkidPaqueteturistico($row['fkidPaqueteTuristico']);
             $servicio->setFkidProveedor($row['fkidProveedor']);
-
             return $servicio;
         }
 
@@ -63,10 +68,12 @@ class ServicioDAO implements ServicioDAOInterface {
         global $conn;
 
         $id = $servicio->getId();
+        $nombre = $servicio->getNombre();
         $costo = $servicio->getCosto();
+        $fkidPaqueteturistico = $servicio->getFkidPaqueteturistico();
         $fkidProveedor = $servicio->getFkidProveedor();
 
-        $query = "UPDATE servicios SET costo='$costo', fkidProveedor='$fkidProveedor' WHERE id=$id";
+        $query = "UPDATE servicios SET nombre='$nombre', costo='$costo', fkidPaqueteTuristico='$fkidPaqueteturistico', fkidProveedor='$fkidProveedor' WHERE id=$id";
         if ($conn->query($query) === TRUE) {
             return true;
         } else {

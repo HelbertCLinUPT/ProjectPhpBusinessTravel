@@ -25,7 +25,7 @@
                 <h2 class="text-center text-4xl text-indigo-900 font-display font-semibold lg:text-left xl:text-5xl
                     xl:text-bold">Sign Up</h2>
                 <div class="mt-12">
-                    <form action="MainController.php?action=usuario-add" method="post">
+                    <form action="MainController.php?action=login-register" method="post">
                         <div >
                             <div class="text-sm font-bold text-gray-700 tracking-wide">Nombre</div>
                             <input name="nombre" class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="Enter your full name">
