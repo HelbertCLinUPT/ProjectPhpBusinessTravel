@@ -50,9 +50,10 @@
                                             <th>ID</th>
                                             <th>Nombre</th>
                                             <th>Apellido</th>
+                                            <th>Password</th>
                                             <th>Número de Celular</th>
-                                            <th>Email</th>
                                             <th>Rol</th>
+                                            <th>Email</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
@@ -62,9 +63,10 @@
                                                 <td><?php echo $usuario->getId(); ?></td>
                                                 <td><?php echo $usuario->getNombre(); ?></td>
                                                 <td><?php echo $usuario->getApellido(); ?></td>
+                                                <td><?php echo $usuario->getPassword(); ?></td>
                                                 <td><?php echo $usuario->getNumeroCelular(); ?></td>
-                                                <td><?php echo $usuario->getEmail(); ?></td>
                                                 <td><?php echo $usuario->getRol(); ?></td>
+                                                <td><?php echo $usuario->getEmail(); ?></td>
 
                                                 <td class="col-2">
                                                     <a href="MainController.php?action=usuario-edit&id=<?php echo $usuario->getId(); ?>" class="btn btn-warning btn-circle">
@@ -97,7 +99,7 @@
 
     <!-- Core plugin JavaScript-->
     <script src="View/static/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="View/static/js/delete.js"></script>
+    <script src="View/static/js/delete-usuario.js"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="View/static/js/sb-admin-2.min.js"></script>

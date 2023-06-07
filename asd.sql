@@ -24,9 +24,9 @@ CREATE TABLE IF NOT EXISTS `paqueteturistico` (
   `direccion` varchar(50) NOT NULL,
   `duracion` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla proyectophp.paqueteturistico: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla proyectophp.paqueteturistico: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `paqueteturistico` DISABLE KEYS */;
 INSERT INTO `paqueteturistico` (`id`, `nombre`, `direccion`, `duracion`) VALUES
 	(2, 'asd', 'asd', 15);
@@ -34,7 +34,7 @@ INSERT INTO `paqueteturistico` (`id`, `nombre`, `direccion`, `duracion`) VALUES
 
 -- Volcando estructura para tabla proyectophp.pedidos
 CREATE TABLE IF NOT EXISTS `pedidos` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `fechasolicitud` date NOT NULL,
   `fechadestino` date NOT NULL,
   `costo` double DEFAULT NULL,
@@ -43,12 +43,13 @@ CREATE TABLE IF NOT EXISTS `pedidos` (
   PRIMARY KEY (`id`),
   KEY `FK_pedidos_usuarios` (`fkidusuario`),
   CONSTRAINT `FK_pedidos_usuarios` FOREIGN KEY (`fkidusuario`) REFERENCES `usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla proyectophp.pedidos: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla proyectophp.pedidos: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `pedidos` DISABLE KEYS */;
 INSERT INTO `pedidos` (`id`, `fechasolicitud`, `fechadestino`, `costo`, `destino`, `fkidusuario`) VALUES
-	(1, '2023-06-05', '2023-06-06', 500, 'Lima', 1);
+	(1, '2023-06-05', '2023-06-06', 700, 'Lima', 1),
+	(2, '2023-06-07', '2023-06-15', 600, 'Cancun', 1);
 /*!40000 ALTER TABLE `pedidos` ENABLE KEYS */;
 
 -- Volcando estructura para tabla proyectophp.proveedores
@@ -111,12 +112,12 @@ CREATE TABLE IF NOT EXISTS `servicios` (
   KEY `FK_servicios_paqueteturistico` (`fkidPaqueteTuristico`),
   CONSTRAINT `FK_servicios_paqueteturistico` FOREIGN KEY (`fkidPaqueteTuristico`) REFERENCES `paqueteturistico` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_servicios_proveedor` FOREIGN KEY (`fkidProveedor`) REFERENCES `proveedores` (`ruc`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla proyectophp.servicios: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla proyectophp.servicios: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `servicios` DISABLE KEYS */;
 INSERT INTO `servicios` (`id`, `nombre`, `costo`, `fkidPaqueteTuristico`, `fkidProveedor`) VALUES
-	(4, 'asd', 500.00, 2, '123456789');
+	(4, 'asd', 600.00, 2, '123456789');
 /*!40000 ALTER TABLE `servicios` ENABLE KEYS */;
 
 -- Volcando estructura para tabla proyectophp.usuarios
@@ -131,14 +132,13 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   PRIMARY KEY (`id`),
   KEY `FK_usuarios_roles` (`rol`),
   CONSTRAINT `FK_usuarios_roles` FOREIGN KEY (`rol`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
 -- Volcando datos para la tabla proyectophp.usuarios: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
 INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `password`, `numeroCelular`, `rol`, `email`) VALUES
 	(1, 'Johne', 'Doe', '1234', '966000002', 2, '123@gmail.com'),
-	(3, 'qwe', 'qwe', '1234', '123456789', 1, '1234@gmail.com'),
-	(6, 'uio', 'uio', '147', '123456781', 1, 'uio@gmail.com');
+	(10, 'zxc2', 'zxc12', 'zxc12', '123456789', 1, 'zxc12');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

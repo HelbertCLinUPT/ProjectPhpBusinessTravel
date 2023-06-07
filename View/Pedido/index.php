@@ -97,7 +97,7 @@
 
     <!-- Core plugin JavaScript-->
     <script src="View/static/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="View/static/js/delete.js"></script>
+    <script src="View/static/js/delete-pedido.js"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="View/static/js/sb-admin-2.min.js"></script>

@@ -49,6 +49,13 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
+                                                <label for="password" class="col-sm-3 col-form-label">password:</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="password" value="<?php echo $usuario->getPassword(); ?>" required>
+                                                </div>
+                                            </div>
+                                
+                                            <div class="form-group row">
                                                 <label for="numeroCelular" class="col-sm-3 col-form-label">Número de Celular:</label>
                                                 <div class="col-sm-9">
                                                     <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="numeroCelular" value="<?php echo $usuario->getNumeroCelular(); ?>" required>

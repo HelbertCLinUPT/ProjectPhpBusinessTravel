@@ -61,10 +61,10 @@
                                                 <td><?php echo $proveedor->getPais(); ?></td>
 
                                                 <td class="col-2">
-                                                    <a href="MainController.php?action=proveedor-edit&ruc=<?php echo $proveedor->getRuc(); ?>" class="btn btn-warning btn-circle">
+                                                    <a href="MainController.php?action=proveedor-edit&id=<?php echo $proveedor->getRuc(); ?>" class="btn btn-warning btn-circle">
                                                         <i class="fas fa-pencil-alt"></i>
                                                     </a>
-                                                    <button class="btn btn-danger btn-circle delete-button" data-ruc="<?php echo $proveedor->getRuc(); ?>">
+                                                    <button class="btn btn-danger btn-circle delete-button" data-id="<?php echo $proveedor->getRuc(); ?>">
                                                         <i class="fas fa-trash"></i>
                                                     </button>
                                                 </td>
@@ -90,7 +90,7 @@
 
     <!-- Core plugin JavaScript-->
     <script src="View/static/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="View/static/js/delete.js"></script>
+    <script src="View/static/js/delete-proveedor.js"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="View/static/js/sb-admin-2.min.js"></script>

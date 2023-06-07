@@ -18,6 +18,7 @@ class UsuarioDAO implements UsuarioDAOInterface{
                 $usuario->setId($row['id']);
                 $usuario->setNombre($row['nombre']);
                 $usuario->setApellido($row['apellido']);
+                $usuario->setPassword($row['password']);
                 $usuario->setNumeroCelular($row['numeroCelular']);
                 $usuario->setRol($row['rol']);
                 $usuario->setEmail($row['email']);
@@ -59,6 +60,7 @@ class UsuarioDAO implements UsuarioDAOInterface{
             $usuario->setId($row['id']);
             $usuario->setNombre($row['nombre']);
             $usuario->setApellido($row['apellido']);
+            $usuario->setPassword($row['password']);
             $usuario->setNumeroCelular($row['numeroCelular']);
             $usuario->setRol($row['rol']);
             $usuario->setEmail($row['email']);

@@ -68,7 +68,7 @@
                                                     <a href="MainController.php?action=interesado-edit&id=<?php echo $reservainteresado->getId(); ?>" class="btn btn-warning btn-circle">
                                                         <i class="fas fa-edit"></i>
                                                     </a>
-                                                    <a href="#" class="btn btn-danger btn-circle delete-btn" data-id="<?php echo $reservainteresado->getId(); ?>">
+                                                    <a class="btn btn-danger btn-circle delete-button" data-id="<?php echo $reservainteresado->getId(); ?>">
                                                         <i class="fas fa-trash"></i>
                                                     </a>
                                                 </td>
@@ -94,7 +94,7 @@
 
     <!-- Core plugin JavaScript-->
     <script src="View/static/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="View/static/js/delete.js"></script>
+    <script src="View/static/js/delete-reservas.js"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="View/static/js/sb-admin-2.min.js"></script>

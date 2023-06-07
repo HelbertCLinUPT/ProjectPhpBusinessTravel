@@ -33,7 +33,7 @@
                                         <div class="text-center">
                                             <h1 class="h4 text-gray-900 mb-4">Editar paquete turístico</h1>
                                         </div>
-                                        <form class="user" method="POST" action="MainController.php?action=paquete-turistico-edit&id=<?php echo $paqueteTuristico->getId(); ?>">
+                                        <form class="user" method="POST" action="MainController.php?action=paquete-edit&id=<?php echo $paqueteTuristico->getId(); ?>">
                                             <div class="form-group row">
                                                 <label for="nombre" class="col-sm-3 col-form-label">Nombre:</label>
                                                 <div class="col-sm-9">

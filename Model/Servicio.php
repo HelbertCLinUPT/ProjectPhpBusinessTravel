@@ -4,6 +4,7 @@ class Servicio {
     private $id;
     private $nombre;
     private $costo;
+    private $fkidPaqueteturistico;
     private $fkidProveedor;
 
     public function getId() {
@@ -29,6 +30,14 @@ class Servicio {
 
     public function setCosto($costo) {
         $this->costo = $costo;
+    }
+
+    public function getFkidPaqueteturistico() {
+        return $this->fkidPaqueteturistico;
+    }
+
+    public function setFkidPaqueteturistico($fkidPaqueteturistico) {
+        $this->fkidPaqueteturistico = $fkidPaqueteturistico;
     }
 
     public function getFkidProveedor() {
