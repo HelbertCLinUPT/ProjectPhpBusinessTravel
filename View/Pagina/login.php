@@ -9,7 +9,7 @@
 </head>
 
 <body class>
-    <div class="lg:flex">
+    <div class="lg:flex mb-0">
         <div class="lg:w-1/2 xl:max-w-screen-sm">
             <div class="py-6 bg-indigo-100 lg:bg-white flex justify-center lg:justify-start lg:px-12">
                 <a href="MainController.php?action=main-index">
@@ -26,7 +26,7 @@
                     xl:text-bold">Log in</h2>
                 <div class="mt-12">
 
-                    <form action="MainController.php?action=login-ingresar" method="post">
+                    <form action="MainController.php?action=login-ingresar" method="POST">
                         <div>
                             <div class="text-sm font-bold text-gray-700 tracking-wide">Email</div>
                             <input class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" name="Usuario" type="text" placeholder="example@gmail.com">
@@ -51,7 +51,7 @@
                         </div>
                     </form>
 
-                    <div class="mt-12 text-sm font-display font-semibold text-gray-700 text-center">
+                    <div class="mb-8 mt-6 mt-12 text-sm font-display font-semibold text-gray-700 text-center">
                         Don't have an account ? <a href="MainController.php?action=login-register" class="cursor-pointer text-indigo-600 hover:text-indigo-800">Sign
                             up</a>
                     </div>

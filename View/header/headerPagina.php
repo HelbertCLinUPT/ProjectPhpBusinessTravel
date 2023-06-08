@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="View/Pagina/css/styleperfil.css">
+
 <header class="header_area">
   <div class="main_menu">
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -22,30 +24,27 @@
           <?php
           session_start();
           if (!isset($_SESSION['rol'])) {
-
-
-
           ?>
             <div class="text-center py-2">
               <a class="button ml-lg-4" href="MainController.php?action=login-user">Login</a>
             </div>
-
-
-
           <?php
           } else {
 
           ?>
-            <div class="text-center py-2">
-              Bienvenido: <?php echo $_SESSION['nombre']; ?>
+            <div class="menu-container">
+              <div class="menu-content">
+                <img src="View/Pagina/img/perfiluser.svg" alt="Usuario" class="menu-image">
+                <span class="menu-name" id="menu-name"><?php echo $_SESSION['nombre']; ?></span>
+                <a class="button-s ml-lg-4" href="MainController.php?action=login-logout">Salir</a>
+              </div>
             </div>
 
-            <div class="text-center py-2">
-              <a class="button ml-lg-4" href="MainController.php?action=login-logout">Salir</a>
-            </div>
+
+
+
 
           <?php
-
           }
           ?>
 

@@ -36,11 +36,12 @@
                         </div>
                         <div class="mt-8">
                             <div class="text-sm font-bold text-gray-700 tracking-wide">Numero de contacto</div>
-                            <input name="numeroCelular" class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="Ingresar su telefono">
+                            <input name="numeroCelular" class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="number" min="0" placeholder="Ingresar su teléfono">
+
                         </div>
                         <div class="mt-8">
                             <div class="text-sm font-bold text-gray-700 tracking-wide">Email</div>
-                            <input name="email" class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="Example@gmail.com">
+                            <input name="email" class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="email" placeholder="Example@gmail.com">
                         </div>
 
                         <div class="mt-8">
@@ -59,15 +60,15 @@
                         </div>
                     </form>
 
-                    <div class="mt-12 text-sm font-display font-semibold text-gray-700 text-center">
+                    <div class="mb-8 mt-6 text-sm font-display font-semibold text-gray-700 text-center">
                         Already have an account? <a href="MainController.php?action=login-user" class="cursor-pointer text-indigo-600 hover:text-indigo-800">Log in</a>
                     </div>
 
                 </div>
             </div>
         </div>
-        <div class="hidden lg:flex items-center justify-center bg-indigo-100 flex-1 h-screen">
-            <img src="View/Pagina/img/banner-avion.jpg" alt="">
+        <div class="hidden lg:flex items-center justify-center bg-indigo-100 flex-1 h-full">
+            <img src="View/Pagina/img/banner-avion.jpg" class="h-full" alt="">
         </div>
     </div>
 
