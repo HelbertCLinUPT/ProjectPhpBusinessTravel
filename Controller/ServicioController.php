@@ -1,16 +1,32 @@
 <?php
 
 require_once 'Model/Dao/ServicioDAO.php';
+require_once 'Model/Dao/ProveedorDAO.php';
+require_once 'Model/Dao/PaqueteTuristicoDAO.php';
 
 class ServicioController {
     private $servicioDAO;
+    private $proveedorDAO;
+    private $paqueteTuristicoDAO;
+
 
     public function __construct() {
         $this->servicioDAO = new ServicioDAO();
+        $this->proveedorDAO = new ProveedorDAO();
+        $this->paqueteTuristicoDAO = new PaqueteTuristicoDAO();
     }
 
     public function index() {
         $servicios = $this->servicioDAO->getAllServicios();
+        foreach($servicios as $servicio):
+            $proveedor=$this->proveedorDAO->getProveedorById($servicio->getFkidProveedor());
+            $paquete=$this->paqueteTuristicoDAO->getPaqueteTuristicoById($servicio->getFkidPaqueteturistico());
+
+            $servicio->setFkidProveedor($proveedor->getNombre());
+            $servicio->setFkidPaqueteturistico($paquete->getNombre());
+
+
+        endforeach;
         include 'View/Servicio/index.php';
     }
 

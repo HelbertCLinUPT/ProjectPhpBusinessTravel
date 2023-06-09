@@ -2,16 +2,34 @@
 
 require_once 'Model/ReservaInteresado.php';
 require_once 'Model/Dao/ReservaInteresadoDAO.php';
+require_once 'Model/Dao/UsuarioDAO.php';
+require_once 'Model/Dao/PaqueteTuristicoDAO.php';
 
 class ReservaInteresadoController {
     private $reservaInteresadoDao;
+    private $usuarioDAO;
+    private $paqueteTuristicoDAO;
 
     public function __construct() {
         $this->reservaInteresadoDao = new reservaInteresadoDAO();
+        $this->usuarioDAO = new UsuarioDAO();
+        $this->paqueteTuristicoDAO = new PaqueteTuristicoDAO();
     }
 
     public function index() {
         $reservainteresados = $this->reservaInteresadoDao->getAllReservaInteresados();
+
+        foreach($reservainteresados as $reservainteresado):
+            $usuario=$this->usuarioDAO->getUsuarioById($reservainteresado->getFkidUsuario());
+            $paquete=$this->paqueteTuristicoDAO->getPaqueteTuristicoById($reservainteresado->getFkidServicio());
+
+            $reservainteresado->setFkidUsuario($reservainteresado->getFkidUsuario().".-".$usuario->getNombre());
+            $reservainteresado->setFkidServicio($paquete->getNombre());
+
+
+        endforeach;
+
+
         include 'View/ReservaInteresado/index.php';
     }
 
