@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -45,7 +44,7 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Nombre</th>
-                                            <th>Dirección</th>
+                                            <th>Imagen</th>
                                             <th>PrecioTotal</th>
                                             <th>Duracion</th>
                                             
@@ -57,6 +56,7 @@
                                             <tr>
                                                 <td><?php echo $paquete->getId(); ?></td>
                                                 <td><?php echo $paquete->getNombre(); ?></td>
+                                                <td><img height="80px" height="60px" src="View/img_paquete/<?php echo $paquete->getImagen(); ?>" alt=""></td>
                                                 <td><?php echo $paquete->getDireccion(); ?></td>
                                                 <td><?php echo $paquete->getPrecioTotal(); ?></td>
                                                 <td><?php echo $paquete->getDuracion(); ?> dias</td>
