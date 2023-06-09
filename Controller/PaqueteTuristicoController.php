@@ -3,30 +3,47 @@
 require_once 'Model/PaqueteTuristico.php';
 require_once 'Model/Dao/PaqueteTuristicoDAO.php';
 
-class PaqueteTuristicoController {
+class PaqueteTuristicoController
+{
     private $paqueteTuristicoDao;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->paqueteTuristicoDao = new PaqueteTuristicoDAO();
     }
 
-    public function index() {
+    public function index()
+    {
         $paqueteturisticos = $this->paqueteTuristicoDao->getAllPaqueteTuristicos();
         include 'View/PaqueteTuristico/index.php';
     }
 
-    public function add() {
+    public function add()
+    {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nombre = $_POST['nombre'];
             $direccion = $_POST['direccion'];
             $duracion = $_POST['duracion'];
+            $nombre_archivo = $_FILES['imagen']['name'];
+            $preciototal = $_POST['preciototal'];
+
 
             $paqueteTuristico = new PaqueteTuristico();
             $paqueteTuristico->setNombre($nombre);
             $paqueteTuristico->setDireccion($direccion);
             $paqueteTuristico->setDuracion($duracion);
+            $paqueteTuristico->setImagen($nombre_archivo);
+            $paqueteTuristico->setPrecioTotal($preciototal);
+
+
 
             if ($this->paqueteTuristicoDao->addPaqueteTuristico($paqueteTuristico)) {
+
+
+                $ruta = $_FILES['imagen']['tmp_name'];
+                $destino = "View/img_paquete/" . $nombre_archivo;
+                copy($ruta, $destino);
+
                 header('Location: MainController.php?action=paquete-index');
             } else {
                 echo 'Error adding the PaqueteTuristico.';
@@ -36,19 +53,41 @@ class PaqueteTuristicoController {
         }
     }
 
-    public function edit($id) {
+    public function edit($id)
+    {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nombre = $_POST['nombre'];
             $direccion = $_POST['direccion'];
             $duracion = $_POST['duracion'];
+            
+            $filename = true;
+            $imagen = $_FILES['imagen']['name'];
+
+            if ($imagen == "") {
+                $imagen = $_POST["imagenanterior"];
+                $filename = false;
+            }
+
+            $preciototal = $_POST['preciototal'];
 
             $paqueteTuristico = new PaqueteTuristico();
             $paqueteTuristico->setId($id);
             $paqueteTuristico->setNombre($nombre);
             $paqueteTuristico->setDireccion($direccion);
             $paqueteTuristico->setDuracion($duracion);
+            $paqueteTuristico->setImagen($imagen);
+            $paqueteTuristico->setPrecioTotal($preciototal);
+
 
             if ($this->paqueteTuristicoDao->updatePaqueteTuristico($paqueteTuristico)) {
+
+                if ($filename==true) {
+                    $ruta = $_FILES['imagen']['tmp_name'];
+                    $destino = "View/img_paquete/" . $imagen;
+                    copy($ruta, $destino);
+                }
+
+
                 header('Location: MainController.php?action=paquete-index');
             } else {
                 echo 'Error updating the PaqueteTuristico.';
@@ -63,12 +102,18 @@ class PaqueteTuristicoController {
         }
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
         if ($this->paqueteTuristicoDao->deletePaqueteTuristico($id)) {
             header('Location: MainController.php?action=paquete-index');
         } else {
             echo 'Error deleting the PaqueteTuristico.';
         }
     }
+
+    public function list()
+    {
+        $paqueteturisticos = $this->paqueteTuristicoDao->getAllPaqueteTuristicos();
+        include("View/Pagina/paquetes.php");
+    }
 }
-?>

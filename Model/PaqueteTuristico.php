@@ -6,6 +6,9 @@ class PaqueteTuristico
     private $nombre;
     private $direccion;
     private $duracion;
+    private $imagen;
+    private $precitototal;
+
 
     public function getId()
     {
@@ -45,4 +48,25 @@ class PaqueteTuristico
     {
         $this->duracion = $duracion;
     }
+    
+    public function getImagen()
+    {
+        return $this->imagen;
+    }
+
+    public function setImagen($imagen)
+    {
+        $this->imagen = $imagen;
+    }
+
+    public function getPrecioTotal()
+    {
+        return $this->precitototal;
+    }
+
+    public function setPrecioTotal($precitototal)
+    {
+        $this->precitototal = $precitototal;
+    }
+
 }

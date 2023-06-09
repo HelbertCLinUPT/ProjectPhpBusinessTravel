@@ -4,8 +4,10 @@ require_once 'db_connect.php';
 require_once 'Model/PaqueteTuristico.php';
 require_once 'Model/Dao/PaqueteTuristicoDaoInterface.php';
 
-class PaqueteTuristicoDAO implements PaqueteTuristicoDaoInterface {
-    public function getAllPaqueteTuristicos() {
+class PaqueteTuristicoDAO implements PaqueteTuristicoDaoInterface
+{
+    public function getAllPaqueteTuristicos()
+    {
         global $conn;
 
         $query = "SELECT * FROM paqueteturistico";
@@ -19,6 +21,8 @@ class PaqueteTuristicoDAO implements PaqueteTuristicoDaoInterface {
                 $paquete->setNombre($row['nombre']);
                 $paquete->setDireccion($row['direccion']);
                 $paquete->setDuracion($row['duracion']);
+                $paquete->setImagen($row['imagen']);
+                $paquete->setPrecioTotal($row['preciototal']);
 
                 $paqueteturisticos[] = $paquete;
             }
@@ -27,14 +31,17 @@ class PaqueteTuristicoDAO implements PaqueteTuristicoDaoInterface {
         return $paqueteturisticos;
     }
 
-    public function addPaqueteTuristico($paquete) {
+    public function addPaqueteTuristico($paquete)
+    {
         global $conn;
 
         $nombre = $paquete->getNombre();
         $direccion = $paquete->getDireccion();
         $duracion = $paquete->getDuracion();
+        $imagen = $paquete->getImagen();
+        $preciototal = $paquete->getPrecioTotal();
 
-        $query = "INSERT INTO paqueteturistico (nombre, direccion, duracion) VALUES ('$nombre', '$direccion', '$duracion')";
+        $query = "INSERT INTO paqueteturistico (nombre, direccion, duracion,imagen,preciototal) VALUES ('$nombre', '$direccion', '$duracion','$imagen',$preciototal)";
         if ($conn->query($query) === TRUE) {
             return true;
         } else {
@@ -42,7 +49,8 @@ class PaqueteTuristicoDAO implements PaqueteTuristicoDaoInterface {
         }
     }
 
-    public function getPaqueteTuristicoById($id) {
+    public function getPaqueteTuristicoById($id)
+    {
         global $conn;
 
         $query = "SELECT * FROM paqueteturistico WHERE id='$id'";
@@ -55,6 +63,8 @@ class PaqueteTuristicoDAO implements PaqueteTuristicoDaoInterface {
             $paquete->setNombre($row['nombre']);
             $paquete->setDireccion($row['direccion']);
             $paquete->setDuracion($row['duracion']);
+            $paquete->setImagen($row['imagen']);
+            $paquete->setPrecioTotal($row['preciototal']);
 
             return $paquete;
         }
@@ -62,15 +72,19 @@ class PaqueteTuristicoDAO implements PaqueteTuristicoDaoInterface {
         return null;
     }
 
-    public function updatePaqueteTuristico($paquete) {
+    public function updatePaqueteTuristico($paquete)
+    {
         global $conn;
 
         $id = $paquete->getId();
         $nombre = $paquete->getNombre();
         $direccion = $paquete->getDireccion();
         $duracion = $paquete->getDuracion();
+        $imagen = $paquete->getImagen();
+        $preciototal = $paquete->getPrecioTotal();
 
-        $query = "UPDATE paqueteturistico SET nombre='$nombre', direccion='$direccion', duracion='$duracion' WHERE id='$id'";
+
+        $query = "UPDATE paqueteturistico SET imagen='$imagen', preciototal=$preciototal , nombre='$nombre', direccion='$direccion', duracion='$duracion' WHERE id='$id'";
         if ($conn->query($query) === TRUE) {
             return true;
         } else {
@@ -78,7 +92,8 @@ class PaqueteTuristicoDAO implements PaqueteTuristicoDaoInterface {
         }
     }
 
-    public function deletePaqueteTuristico($id) {
+    public function deletePaqueteTuristico($id)
+    {
         global $conn;
 
         $query = "DELETE FROM paqueteturistico WHERE id='$id'";
@@ -89,4 +104,3 @@ class PaqueteTuristicoDAO implements PaqueteTuristicoDaoInterface {
         }
     }
 }
-?>

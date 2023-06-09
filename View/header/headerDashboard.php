@@ -1,9 +1,9 @@
 <?php
-if (!isset($_SESSION)) {
+if (@!isset($_SESSION)) {
     session_start();
 }
 
-if ($_SESSION['rol'] != 2) {
+if (@$_SESSION['rol'] != 2) {
     header("Location:index.php");
     exit();
 }

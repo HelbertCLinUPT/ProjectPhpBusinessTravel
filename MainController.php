@@ -132,7 +132,7 @@ switch ($action) {
         include("View/Pagina/ofertas.php");
         break;
     case 'page-paquetes':
-        include("View/Pagina/paquetes.php");
+        $paqueteTuristicoController->list();
         break;
     case 'page-contactanos':
         include("View/Pagina/contactanos.php");

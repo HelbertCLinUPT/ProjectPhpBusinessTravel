@@ -11,6 +11,20 @@
     <link href="View/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="View/static/css/sb-admin-2.min.css" rel="stylesheet">
+    <script type="text/javascript">
+        function validarArchivo() {
+            var archivoInput = document.getElementById('archivo');
+            var archivo = archivoInput.files[0];
+            var extensionesPermitidas = /(\.jpg|\.png|\.jpeg)$/i;
+
+            if (!extensionesPermitidas.exec(archivo.name)) {
+                alert('Error: Este tipo de archivo no está permitido. Por favor, selecciona una imagen con una de las siguientes extensiones: .jpg, .png, .jpeg.');
+                archivoInput.value = '';
+                return false;
+            }
+        }
+    </script>
+
 </head>
 
 <body id="page-top">
@@ -33,32 +47,46 @@
                                         <div class="text-center">
                                             <h1 class="h4 text-gray-900 mb-4">Crear paquete turístico</h1>
                                         </div>
-                                        <form class="user" method="POST" action="MainController.php?action=paquete-add">
+                                        <form class="user" method="POST" action="MainController.php?action=paquete-add" enctype="multipart/form-data" onsubmit="return validarArchivo();">
                                             <div class="form-group row">
                                                 <label for="nombre" class="col-sm-3 col-form-label">Nombre:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control form-control-user" name="nombre" style="font-size: 18px;" required>
+                                                    <input type="text" class="form-control form-control-user" required name="nombre" style="font-size: 18px;" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="direccion" class="col-sm-3 col-form-label">Dirección:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="direccion">
+                                                    <input type="text" class="form-control form-control-user" required style="font-size: 18px;" name="direccion">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="duracion" class="col-sm-3 col-form-label">Duración:</label>
+                                                <label for="duracion" class="col-sm-3 col-form-label">Duración (dias):</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="duracion">
+                                                    <input type="number" class="form-control form-control-user" required style="font-size: 18px;" name="duracion">
                                                 </div>
                                             </div>
+                                            <div class="form-group row">
+                                                <label for="duracion" class="col-sm-3 col-form-label">Precio Total:</label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control form-control-user" min=0 style="font-size: 18px;" name="preciototal">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="duracion" class="col-sm-3 col-form-label">Imagen:</label>
+                                                <div class="col-sm-9">
+                                                    <input type="file" class="form-control" id="archivo" name="imagen" required>
+                                                </div>
+
+                                            </div>
+
 
                                             <div class="form-group row">
                                                 <div class="col-sm-9 offset-sm-3">
-                                                    <input type="submit" value="Agregar" style="font-size: 18px;" class="btn btn-primary btn-user btn-block">
+                                                    <input type="submit" value="Agregar" style="font-size: 18px;" class="btn btn-primary btn-user btn-block" required>
                                                 </div>
                                             </div>
-                                            
+
                                             <hr>
                                         </form>
 

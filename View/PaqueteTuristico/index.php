@@ -46,7 +46,9 @@
                                             <th>ID</th>
                                             <th>Nombre</th>
                                             <th>Dirección</th>
-                                            <th>Duración</th>
+                                            <th>PrecioTotal</th>
+                                            <th>Duracion</th>
+                                            
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
@@ -56,7 +58,8 @@
                                                 <td><?php echo $paquete->getId(); ?></td>
                                                 <td><?php echo $paquete->getNombre(); ?></td>
                                                 <td><?php echo $paquete->getDireccion(); ?></td>
-                                                <td><?php echo $paquete->getDuracion(); ?></td>
+                                                <td><?php echo $paquete->getPrecioTotal(); ?></td>
+                                                <td><?php echo $paquete->getDuracion(); ?> dias</td>
                                                 <td>
                                                     <a href="MainController.php?action=paquete-edit&id=<?php echo $paquete->getId(); ?>" class="btn btn-warning btn-circle">
                                                         <i class="fas fa-pencil-alt"></i>

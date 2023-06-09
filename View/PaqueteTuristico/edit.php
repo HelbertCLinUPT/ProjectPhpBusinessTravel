@@ -11,6 +11,19 @@
     <link href="View/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="View/static/css/sb-admin-2.min.css" rel="stylesheet">
+    <script type="text/javascript">
+        function validarArchivo() {
+            var archivoInput = document.getElementById('archivo');
+            var archivo = archivoInput.files[0];
+            var extensionesPermitidas = /(\.jpg|\.png|\.jpeg)$/i;
+
+            if (!extensionesPermitidas.exec(archivo.name)) {
+                alert('Error: Este tipo de archivo no está permitido. Por favor, selecciona una imagen con una de las siguientes extensiones: .jpg, .png, .jpeg.');
+                archivoInput.value = '';
+                return false;
+            }
+        }
+    </script>
 </head>
 
 <body id="page-top">
@@ -33,7 +46,7 @@
                                         <div class="text-center">
                                             <h1 class="h4 text-gray-900 mb-4">Editar paquete turístico</h1>
                                         </div>
-                                        <form class="user" method="POST" action="MainController.php?action=paquete-edit&id=<?php echo $paqueteTuristico->getId(); ?>">
+                                        <form class="user" method="POST" action="MainController.php?action=paquete-edit&id=<?php echo $paqueteTuristico->getId(); ?>" enctype="multipart/form-data"  onsubmit="return validarArchivo();">
                                             <div class="form-group row">
                                                 <label for="nombre" class="col-sm-3 col-form-label">Nombre:</label>
                                                 <div class="col-sm-9">
@@ -54,10 +67,31 @@
                                             </div>
 
                                             <div class="form-group row">
+                                                <label for="Precio" class="col-sm-3 col-form-label">Precio Total:</label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control form-control-user" min=0 style="font-size: 18px;" name="preciototal" value="<?php echo $paqueteTuristico->getPrecioTotal(); ?>">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="Imagen" class="col-sm-3 col-form-label">Imagen:</label>
+                                                <div class="col-sm-9">
+                                                    <input type="file" class="form-control" id="archivo" name="imagen" >
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="Imagen" class="col-sm-3 col-form-label">Imagen Anterior:</label>
+                                                <img src="View/img_paquete/<?php echo $paqueteTuristico->getImagen(); ?>" height="200px" width="70%" alt="img Anterior">
+                                                <input type="hidden" name="imagenanterior" value="<?php echo $paqueteTuristico->getImagen(); ?>">
+                                            </div>
+
+
+                                            <div class="form-group row">
                                                 <div class="col-sm-9 offset-sm-3">
                                                     <input type="submit" value="Actualizar" style="font-size: 18px;" class="btn btn-primary btn-user btn-block">
                                                 </div>
                                             </div>
+
                                             
                                             <hr>
                                         </form>

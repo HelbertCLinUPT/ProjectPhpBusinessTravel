@@ -2,7 +2,7 @@
 // Database credentials
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "admin";
 $dbname = "proyectophp";
 
 // Create a database connection
