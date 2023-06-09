@@ -85,10 +85,15 @@ switch ($action) {
         $servicioController->index();
         break;
     case 'servicio-add':
-        $servicioController->add();
+        $proveedores = $proveedorController->listar(); // Llamar a la función listar() en el proveedorController
+        $paqueteturisticos = $paqueteTuristicoController->listar();
+        $result = $servicioController->add($proveedores, $paqueteturisticos);
         break;
+
     case 'servicio-edit':
-        $servicioController->edit($id);
+        $proveedores = $proveedorController->listar(); // Llamar a la función listar() en el proveedorController
+        $paqueteturisticos = $paqueteTuristicoController->listar();
+        $result = $servicioController->edit($id,$proveedores, $paqueteturisticos);
         break;
     case 'servicio-delete':
         $servicioController->delete($id);
@@ -107,7 +112,6 @@ switch ($action) {
     case 'proveedor-delete':
         $proveedorController->delete($id);
         break;
-
         // Login
     case 'login-user':
         $loginController->index();
@@ -117,13 +121,11 @@ switch ($action) {
         break;
     case 'login-register':
         $loginController->registrarse();
-    case 'login-recuperarcuenta':
-        $loginController->RecuperarCuenta();
         break;
     case 'login-logout':
         $loginController->salir();
         break;
-        
+
         // Pagina Web Links
     case 'main-index':
         include("View/Pagina/index.php");

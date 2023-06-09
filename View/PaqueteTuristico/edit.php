@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php    session_start();
+?>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -61,14 +63,14 @@
                                             <div class="form-group row">
                                                 <label for="duracion" class="col-sm-3 col-form-label">Duración:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="duracion" value="<?php echo $paqueteTuristico->getDuracion(); ?>">
+                                                    <input type="number" class="form-control form-control-user" style="font-size: 18px;" name="duracion" value="<?php echo $paqueteTuristico->getDuracion(); ?>" min="0">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <label for="Precio" class="col-sm-3 col-form-label">Precio Total:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" class="form-control form-control-user" min=0 style="font-size: 18px;" name="preciototal" value="<?php echo $paqueteTuristico->getPrecioTotal(); ?>">
+                                                    <input type="number" class="form-control form-control-user" min="0" style="font-size: 18px;" name="preciototal" value="<?php echo $paqueteTuristico->getPrecioTotal(); ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -87,10 +89,11 @@
 
                                             <div class="form-group row">
                                                 <div class="col-sm-9 offset-sm-3">
-                                                    <input type="submit" value="Actualizar" style="font-size: 18px;" class="btn btn-primary btn-user btn-block">
+                                                    <input type="submit" value="Actualizar" style="font-size: 18px;" class="btn btn-primary">
+                                                    <a href="MainController.php?action=paquete-index" class="btn btn-secondary">Retroceder</a>
                                                 </div>
                                             </div>
-
+                                            
                                             
                                             <hr>
                                         </form>

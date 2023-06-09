@@ -51,7 +51,7 @@
                                             <th>Nombre</th>
                                             <th>Precio Total</th>
                                             <th>Usuario</th>
-                                            <th>Paquete</th>
+                                            <th>Servicio</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>

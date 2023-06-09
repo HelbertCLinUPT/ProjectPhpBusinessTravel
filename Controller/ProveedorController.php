@@ -13,7 +13,9 @@ class ProveedorController {
         $proveedores = $this->proveedorDAO->getAllProveedores();
         include 'View/Proveedor/index.php';
     }
-
+    public function listar() {
+        return $this->proveedorDAO->getAllProveedores();
+    }
     public function add() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $ruc = $_POST['ruc'];

@@ -14,30 +14,6 @@ class UsuarioController
     public function index()
     {
         $usuarios = $this->usuarioDAO->getAllUsuarios();
-        foreach ($usuarios as $usuario) :
-            switch ($usuario->getRol()) {
-                case 1:
-                    $usuario->setRol("Usuario");
-                    break;
-                case 2:
-                    $usuario->setRol("Admin");
-                    break;
-                case 3:
-                    $usuario->setRol("Interesado");
-                    break;
-
-
-                default:
-                    $usuario->setRol("incorrecto");
-                    break;
-            }
-
-
-
-        endforeach;
-
-
-
         include 'View/Usuario/index.php';
     }
 
@@ -73,7 +49,7 @@ class UsuarioController
     public function edit($id)
     {
         $usuario = $this->usuarioDAO->getUsuarioById($id);
-
+        
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $usuario->setNombre($_POST['nombre']);
             $usuario->setApellido($_POST['apellido']);

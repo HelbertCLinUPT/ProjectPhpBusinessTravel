@@ -48,7 +48,6 @@
                                             <th>Destino</th>
                                             <th>PrecioTotal</th>
                                             <th>Duracion</th>
-                                            
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>

@@ -8,7 +8,13 @@ class ServicioDAO implements ServicioDAOInterface {
     public function getAllServicios() {
         global $conn;
 
-        $query = "SELECT * FROM servicios";
+        $query = "
+        SELECT s.id,s.nombre,s.costo,p.nombre AS fkidPaqueteTuristico,pro.nombre AS fkidProveedor
+        FROM servicios AS s
+        JOIN paqueteturistico AS p
+        ON s.fkidPaqueteTuristico = p.id
+        JOIN proveedores AS pro
+        ON s.fkidProveedor = pro.ruc";
         $result = $conn->query($query);
 
         $servicios = array();

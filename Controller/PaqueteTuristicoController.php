@@ -17,7 +17,10 @@ class PaqueteTuristicoController
         $paqueteturisticos = $this->paqueteTuristicoDao->getAllPaqueteTuristicos();
         include 'View/PaqueteTuristico/index.php';
     }
-
+    public function listar()
+    {
+        return $this->paqueteTuristicoDao->getAllPaqueteTuristicos();
+    }
     public function add()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {

@@ -4,10 +4,8 @@ require_once 'db_connect.php';
 require_once 'Model/Usuario.php';
 require_once 'Model/Dao/LoginDaoInterface.php';
 
-class LoginDAO implements LoginDaoInterface
-{
-    public function ingresar(Usuario $usuario)
-    {
+class LoginDAO implements LoginDaoInterface{
+    public function ingresar(Usuario $usuario) {
         global $conn;
         $emailUsuario = $usuario->getemail();
         $passwordUsuario = $usuario->getpassword();
@@ -66,27 +64,5 @@ class LoginDAO implements LoginDaoInterface
             return false;
         }
     }
-    
-    public function RecuperarCuenta($correo)
-    {
-        global $conn;
-
-        $query = "SELECT * FROM usuarios where email='$correo; ";
-        $result = $conn->query($query);
-        if ($result->num_rows > 0) {
-            
-            $asunto = 'Correo de prueba';
-            $mensaje = 'Este es un correo de prueba enviado desde PHP.';
-            $headers = 'From: remitente@example.com' . "\r\n" .
-                'Reply-To: remitente@example.com' . "\r\n" .
-                'X-Mailer: PHP/' . phpversion();
-
-            if (@mail($correo, $asunto, $mensaje, $headers)) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-        return false;
-    }
 }
+?>

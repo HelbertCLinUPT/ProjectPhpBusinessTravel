@@ -73,29 +73,7 @@ class LoginController
         }
     }
     
-    public function RecuperarCuenta()
-    {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $correo=$_POST['correo'];
 
-            if( $this->LoginDAO->RecuperarCuenta($correo)){
-                //confirmar el envio de correo
-                echo 'El correo se ha enviado correctamente.';
-                //header('Location: MainController.php?action=main-index');
-            }else{
-                //confirmar el envio de correo
-                echo 'El correo no se ha enviado.';
-                //header('Location: MainController.php?action=main-index');
-            }
-
-           
-
-        }
-        else {
-            
-            include("View/RecuperarCuenta/index.php");
-        }
-    }
     public function salir()
     {
         session_start();

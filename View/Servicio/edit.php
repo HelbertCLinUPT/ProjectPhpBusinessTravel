@@ -40,18 +40,35 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="costo">Costo:</label>
-                                                <input type="text" name="costo" class="form-control" value="<?php echo $servicio->getCosto(); ?>" required>
+                                                <input type="number" name="costo" class="form-control" value="<?php echo $servicio->getCosto(); ?>" min="0" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="fkidPaqueteturistico">ID PaqueteTuristico:</label>
-                                                <input type="text" name="fkidPaqueteturistico" class="form-control" value="<?php echo $servicio->getFkidPaqueteturistico(); ?>" required>
+                                                <label for="fkidPaqueteturistico">PaqueteTuristico:</label>
+                                                <select class="form-control" style="font-size: 18px;" name="fkidPaqueteturistico" required>
+                                                    <?php foreach ($paqueteturisticos as $paquete) : ?>
+                                                        <option value="<?php echo $paquete->getId(); ?>" <?php echo ($paquete->getId() == $servicio->getFkidPaqueteturistico()) ? 'selected' : ''; ?>><?php echo $paquete->getNombre(); ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
                                             </div>
                                             <div class="form-group">
-                                                <label for="fkidProveedor">ID Proveedor:</label>
-                                                <input type="text" name="fkidProveedor" class="form-control" value="<?php echo $servicio->getFkidProveedor(); ?>" required>
+                                                <label for="fkidProveedor">Proveedor:</label>
+                                                <select class="form-control " style="font-size: 18px;" name="fkidProveedor" required>
+                                                    <?php foreach ($proveedores as $proveedor) : ?>
+                                                        <option value="<?php echo $proveedor->getRuc(); ?>" 
+                                                        <?php 
+                                                        echo ($proveedor->getRuc() == $servicio->getFkidProveedor()) ? 'selected' : ''; ?>>
+                                                        <?php 
+                                                        echo $proveedor->getNombre(); 
+                                                        ?>
+                                                        </option>
+                                                    <?php endforeach; ?>
+                                                </select>
                                             </div>
-                                            <input type="submit" value="Actualizar" class="btn btn-primary">
+                                            <input type="submit" value="Actualizar" class="btn btn-primary">                                 
+                                            <a href="MainController.php?action=servicio-index" class="btn btn-secondary">Retroceder</a>
+
                                         </form>
+
                                     </div>
                                 </div>
                             </div>

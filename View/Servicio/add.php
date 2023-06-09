@@ -43,31 +43,41 @@
                                             <div class="form-group row">
                                                 <label for="costo" class="col-sm-3 col-form-label">Costo:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="costo">
+                                                    <input type="number" class="form-control form-control-user" style="font-size: 18px;" name="costo" min="0" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="fkidPaqueteturistico" class="col-sm-3 col-form-label">ID PaqueteTuristico:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="fkidPaqueteturistico">
+                                                    <select class="form-control" style="font-size: 18px;" name="fkidPaqueteturistico" required>
+                                                        <option value="">Seleccionar...</option>
+                                                        <?php foreach ($paqueteturisticos as $paquete) : ?>
+                                                            <option value="<?php echo $paquete->getId(); ?>"><?php echo $paquete->getNombre(); ?></option>
+                                                        <?php endforeach; ?>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="fkidProveedor" class="col-sm-3 col-form-label">ID Proveedor:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="fkidProveedor">
+                                                    <select class="form-control " style="font-size: 18px;" name="fkidProveedor" required>
+                                                        <option value="">Seleccionar...</option>
+                                                        <?php foreach ($proveedores as $proveedor) : ?>
+                                                            <option value="<?php echo $proveedor->getRuc(); ?>"><?php echo $proveedor->getNombre(); ?></option>
+                                                        <?php endforeach; ?>
+                                                    </select>
                                                 </div>
                                             </div>
+
 
                                             <div class="form-group row">
                                                 <div class="col-sm-9 offset-sm-3">
                                                     <input type="submit" value="Agregar" style="font-size: 18px;" class="btn btn-primary btn-user btn-block">
                                                 </div>
                                             </div>
-                                            
+
                                             <hr>
                                         </form>
-
                                     </div>
                                 </div>
                             </div>

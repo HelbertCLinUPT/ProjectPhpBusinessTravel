@@ -1,36 +1,23 @@
 <?php
 
 require_once 'Model/Dao/ServicioDAO.php';
-require_once 'Model/Dao/ProveedorDAO.php';
-require_once 'Model/Dao/PaqueteTuristicoDAO.php';
 
 class ServicioController {
     private $servicioDAO;
-    private $proveedorDAO;
-    private $paqueteTuristicoDAO;
-
+    private $proveedores;
+    private $paqueteturisticos;
 
     public function __construct() {
         $this->servicioDAO = new ServicioDAO();
-        $this->proveedorDAO = new ProveedorDAO();
-        $this->paqueteTuristicoDAO = new PaqueteTuristicoDAO();
     }
 
     public function index() {
         $servicios = $this->servicioDAO->getAllServicios();
-        foreach($servicios as $servicio):
-            $proveedor=$this->proveedorDAO->getProveedorById($servicio->getFkidProveedor());
-            $paquete=$this->paqueteTuristicoDAO->getPaqueteTuristicoById($servicio->getFkidPaqueteturistico());
-
-            $servicio->setFkidProveedor($proveedor->getNombre());
-            $servicio->setFkidPaqueteturistico($paquete->getNombre());
-
-
-        endforeach;
         include 'View/Servicio/index.php';
     }
 
-    public function add() {
+    public function add($proveedores, $paqueteturisticos) {
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nombre = $_POST['nombre'];
             $costo = $_POST['costo'];
@@ -49,11 +36,13 @@ class ServicioController {
                 echo 'Error adding the servicio.';
             }
         } else {
+            $this->proveedores = $proveedores;
+            $this->paqueteturisticos = $paqueteturisticos;
             include 'View/Servicio/add.php';
         }
     }
 
-    public function edit($id) {
+    public function edit($id,$proveedores, $paqueteturisticos) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             $nombre = $_POST['nombre'];
@@ -76,6 +65,8 @@ class ServicioController {
         } else {
             $servicio = $this->servicioDAO->getServicioById($id);
             if ($servicio) {
+                $this->proveedores = $proveedores;
+                $this->paqueteturisticos = $paqueteturisticos;
                 include 'View/Servicio/edit.php';
             } else {
                 echo 'Servicio not found.';

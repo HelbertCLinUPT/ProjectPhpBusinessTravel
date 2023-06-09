@@ -50,7 +50,7 @@
                                             <th>ID</th>
                                             <th>Nombre</th>
                                             <th>Costo</th>
-                                            <th>ID Proveedor</th>
+                                            <th>Proveedor</th>
                                             <th>Paquete Turistico</th>
                                             <th>Acciones</th>
                                         </tr>
@@ -61,9 +61,8 @@
                                                 <td><?php echo $servicio->getId(); ?></td>
                                                 <td><?php echo $servicio->getNombre(); ?></td>
                                                 <td><?php echo $servicio->getCosto(); ?></td>
-                                                <td><?php echo $servicio->getFkidProveedor(); ?></td>
                                                 <td><?php echo $servicio->getFkidPaqueteturistico(); ?></td>
-                                                
+                                                <td><?php echo $servicio->getFkidProveedor(); ?></td>
 
                                                 <td class="col-2">
                                                     <a href="MainController.php?action=servicio-edit&id=<?php echo $servicio->getId(); ?>" class="btn btn-warning btn-circle">
