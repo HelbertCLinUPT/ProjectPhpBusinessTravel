@@ -33,8 +33,8 @@
   <section class="hero-banner-sm magic-ball magic-ball-banner" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 0px -80px" data-top-bottom="background-position: 0 100px">
     <div class="container">
       <div class="hero-banner-sm-content">
-        <h1>Packages</h1>
-        <p>Air seed winged lights saw kind whales in sixth best a dont seas dron image so fish all tree on</p>
+        <h1>PAQUETE DE VIAJES</h1>
+        <p>"Descubre nuestras increíbles experiencias de viaje. Paquetes turísticos a medida para vivir momentos inolvidables. ¡Business Travel, tu mejor elección!"</p>
       </div>
     </div>
   </section>
@@ -42,12 +42,12 @@
 
 
   <!--================Service Area Start =================-->
-  <section class="section-margin">
+  <section class="section-margin generic-margin">
     <div class="container">
       <div class="section-intro text-center pb-90px">
         <img class="section-intro-img" src="View/Pagina/img/home/section-icon.png" alt="">
-        <h2>Our Popular Services</h2>
-        <p>Fowl have fruit moveth male they are that place you will lesser</p>
+        <h2>Nuestros servicios más populares</h2>
+        <p>"Descubre nuestros servicios más populares. Ofrecemos una amplia selección de experiencias de viaje inolvidables que se adaptan a tus gustos y necesidades. Desde destinos exóticos hasta escapadas urbanas, encuentra los servicios más buscados y crea recuerdos inolvidables con nosotros."</p>
       </div>
 
       <div class="row">
@@ -57,8 +57,10 @@
               <img class="img-fluid" src="View/Pagina/img/home/service1.png" alt="">
             </div>
             <div class="service-card-body">
-              <h3>Hotel Booking</h3>
-              <p>Great so dominion two seed give dry rule be fowl him female you will gathered creeping and created air</p>
+              <br><br><br><br><br><br>
+              <h3>Reserva de Hotel</h3>
+              <p>¡Encuentra los mejores hoteles para tu próxima aventura aquí!
+              </p>
             </div>
           </div>
         </div>
@@ -68,8 +70,10 @@
               <img class="img-fluid" src="View/Pagina/img/home/service2.png" alt="">
             </div>
             <div class="service-card-body">
-              <h3>Flight Booking</h3>
-              <p>Great so dominion two seed give dry rule be fowl him female you will gathered creeping and created air</p>
+              <br><br><br><br><br><br>  
+              <h3>Reserva de Vuelos</h3>
+              <p>¡Descubre los vuelos perfectos para tu próxima aventura aquí!
+              </p>
             </div>
           </div>
         </div>
@@ -79,8 +83,10 @@
               <img class="img-fluid" src="View/Pagina/img/home/service3.png" alt="">
             </div>
             <div class="service-card-body">
-              <h3>Destination Booking</h3>
-              <p>Great so dominion two seed give dry rule be fowl him female you will gathered creeping and created air</p>
+             <br><br><br><br><br><br>
+              <h3>Reserva en Destino</h3>
+              <p>"Reserva tu destino soñado con nosotros".
+              </p>
             </div>
           </div>
         </div>
@@ -91,92 +97,72 @@
 
 
   <!--================Tour section Start =================-->
+  <div class="section-intro text-center pb-90px">
+        <img class="section-intro-img" src="View/Pagina/img/home/section-icon.png" alt="">
+        <h2>Nuestros Paquetes</h2>
+  </div>
   <section class="section-margin">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="tour-card">
-            <img class="card-img rounded-0" src="View/Pagina/img/home/tour1.png" alt="">
-            <div class="tour-card-overlay">
-              <div class="media">
-                <div class="media-body">
-                  <h4>Paris tour offer</h4>
-                  <small>5 days offer</small>
-                  <p>We proper guided our tourist</p>
-                </div>
-                <div class="media-price">
-                  <h4 class="text-primary">$65/day</h4>
-                </div>
+    <div class="row">
+      <div class="col-md-6 mx-auto text-center">
+        <div class="tour-card">
+          <img class="card-img rounded-0" src="View/Pagina/img/home/maravillas-desde-mi-pantalla-torre-eiffel-m.jpg" alt="">
+          <div class="tour-card-overlay">
+            <div class="media">
+              <div class="media-body">
+                <h4>TOUR PARIS</h4>
+                <small>5 days offer</small>
+                <p>We proper guided our tourist</p>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="row">
-            <div class="col-lg-10 offset-lg-1">
-              <div class="tour-content">
-                <h2>We offer worldwise tour plan recently</h2>
-                <p>Make she'd moved divided air. Whose tree that hath own upon them it multiply was blessed </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="tour-card">
-            <img class="card-img rounded-0" src="View/Pagina/img/home/tour2.png" alt="">
-            <div class="tour-card-overlay">
-              <div class="media">
-                <div class="media-body">
-                  <h4>Paris tour offer</h4>
-                  <small>5 days offer</small>
-                  <p>We proper guided our tourist</p>
-                </div>
-                <div class="media-price">
-                  <h4 class="text-primary">$65/day</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6 col-lg-7">
-          <div class="tour-card">
-            <img class="card-img rounded-0" src="View/Pagina/img/home/tour3.png" alt="">
-            <div class="tour-card-overlay">
-              <div class="media">
-                <div class="media-body">
-                  <h4>Paris tour offer</h4>
-                  <small>5 days offer</small>
-                  <p>We proper guided our tourist</p>
-                </div>
-                <div class="media-price">
-                  <h4 class="text-primary">$65/day</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-5">
-          <div class="tour-card">
-            <img class="card-img rounded-0" src="View/Pagina/img/home/tour4.png" alt="">
-            <div class="tour-card-overlay">
-              <div class="media">
-                <div class="media-body">
-                  <h4>Paris tour offer</h4>
-                  <small>5 days offer</small>
-                  <p>We proper guided our tourist</p>
-                </div>
-                <div class="media-price">
-                  <h4 class="text-primary">$65/day</h4>
-                </div>
+              <div class="media-price">
+                <h4 class="text-primary">$65/day</h4>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <br>
+    <div class="row">
+      <div class="col-md-6 mx-auto text-center">
+        <div class="tour-card">
+          <img class="card-img rounded-0" src="View/Pagina/img/home/652483.jpg" alt="">
+          <div class="tour-card-overlay">
+            <div class="media">
+              <div class="media-body">
+                <h4>TOUR MACHU PICHU</h4>
+                <small>5 days offer</small>
+                <p>We proper guided our tourist</p>
+              </div>
+              <div class="media-price">
+                <h4 class="text-primary">$65/day</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-6 mx-auto text-center">
+        <div class="tour-card">
+          <img class="card-img rounded-0" src="View/Pagina/img/home/descarga.jpg" alt="">
+          <div class="tour-card-overlay">
+            <div class="media">
+              <div class="media-body">
+                <h4>TOUR ROMA</h4>
+                <small>5 days offer</small>
+                <p>We proper guided our tourist</p>
+              </div>
+              <div class="media-price">
+                <h4 class="text-primary">$65/day</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </section>
   <!--================Tour section End =================-->
 

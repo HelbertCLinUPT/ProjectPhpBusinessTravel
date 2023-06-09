@@ -22,8 +22,8 @@
   <section class="hero-banner-sm magic-ball magic-ball-banner" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 0px -80px" data-top-bottom="background-position: 0 100px">
     <div class="container">
       <div class="hero-banner-sm-content">
-        <h1>About Us</h1>
-        <p>Air seed winged lights saw kind whales in sixth best a dont seas dron image so fish all tree on</p>
+        <h1>Quienes Somos</h1>
+        <p>"Somos Business Travel, una empresa apasionada por brindar experiencias de viaje excepcionales. Nos dedicamos a diseñar y ofrecer los mejores paquetes turísticos, con el objetivo de hacer realidad los sueños de nuestros clientes. Con años de experiencia en la industria, nos enorgullece contar con un equipo de profesionales dedicados y comprometidos en brindar un servicio de calidad. Nos esforzamos por superar las expectativas, ofreciendo destinos fascinantes, atención personalizada y un enfoque en la satisfacción del cliente. Ya sea que desees explorar destinos históricos, disfrutar de hermosas playas o sumergirte en la naturaleza, en Business Travel nos ocupamos de cada detalle para que tu experiencia de viaje sea inolvidable. Confía en nosotros para planificar tus próximas aventuras y descubre el mundo de posibilidades que tenemos para ofrecerte."</p>
       </div>
     </div>
   </section>
@@ -37,78 +37,16 @@
           </div>
         </div>
         <div class="col-lg-5 col-md-6 align-self-center about-content">
-          <h2>Exploration is <br class="d-none d-xl-block"> really the essence <br class="d-none d-xl-block"> of the
-            human spirit</h2>
-          <p>Make she'd moved divided air. Whose tree that replenish tone hath own upon them it multiply was blessed is
-            lights make gathering so day dominion so creeping air was made.</p>
-          <a class="button" href="#">Learn More</a>
+          <h2>"Tu viaje inolvidable comienza aquí: Business Travel, creando experiencias únicas para ti"</h2>
+          <p>En Business Travel, nos apasiona hacer realidad los sueños de viaje de nuestros clientes. Como agencia de viajes de confianza, nos dedicamos a proporcionar experiencias inolvidables y servicios de calidad. Nuestro objetivo es brindarte un servicio personalizado y adaptado a tus necesidades, ofreciéndote los mejores paquetes turísticos y opciones de viaje.
+            Nos enorgullece contar con un equipo de expertos en viajes que están comprometidos en brindarte atención y asesoramiento profesional en cada etapa de tu viaje. Desde la planificación y reserva de vuelos y hoteles, hasta la organización de excursiones y actividades, nos encargamos de todos los detalles para que puedas disfrutar al máximo tu experiencia.
+            Valoramos la calidad, la excelencia y la satisfacción del cliente. Trabajamos arduamente para asegurarnos de que cada viaje sea especial, ofreciendo destinos fascinantes, opciones de alojamiento cómodas y servicios confiables. Nos esforzamos por superar tus expectativas y asegurarnos de que tengas recuerdos inolvidables en cada aventura que emprendas con nosotros.
+            Confía en Business Travel para descubrir nuevos destinos, sumergirte en culturas fascinantes y vivir experiencias únicas. Estamos aquí para hacer realidad tus sueños de viaje y brindarte un servicio excepcional. ¡Permítenos ser tu compañero de viaje y crear momentos inolvidables juntos!"</p>
         </div>
       </div>
     </div>
   </section>
-
-  <section class="section-margin">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-xl-5 align-self-center mb-5 mb-lg-0">
-          <div class="search-content">
-            <h2>Search suitable <br class="d-none d-xl-block"> and affordable plan <br class="d-none d-xl-block"> for
-              your tour</h2>
-            <p>Make she'd moved divided air. Whose tree that replenish tone hath own upon them it multiply was blessed
-              is lights make gathering so day dominion so creeping</p>
-            <a class="button" href="MainController.php?action=login-user">Mas informacion</a>
-          </div>
-        </div>
-        <div class="col-lg-6 col-xl-6 offset-xl-1">
-          <div class="search-wrapper">
-            <h3>Search Package</h3>
-            <form class="search-form" action="#">
-              <div class="form-group">
-                <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Recipient's username">
-                  <div class="input-group-append">
-                    <span class="input-group-text"><i class="ti-search"></i></span>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <select name="category" id="category">
-                  <option value="disabled" disabled selected>Category</option>
-                  <option value="8 AM">8 AM</option>
-                  <option value="12 PM">12 PM</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <select name="tourDucation" id="tourDuration">
-                  <option value="disabled" disabled selected>Tour duration</option>
-                  <option value="8 AM">8 AM</option>
-                  <option value="12 PM">12 PM</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <div class="input-group">
-                  <input type="date" class="form-control">
-                  <div class="input-group-append">
-                    <span class="input-group-text"><i class="ti-notepad"></i></span>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <select name="priceRange" id="priceRange">
-                  <option value="disabled" disabled selected>Price range</option>
-                  <option value="8 AM">8 AM</option>
-                  <option value="12 PM">12 PM</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <button class="button border-0 mt-3" type="submit">Search Package</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+            
   <!--================Search Package section End =================-->
 
 

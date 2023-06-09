@@ -3,10 +3,9 @@
     <div class="row">
       <div class="col-lg-4  col-md-6 col-sm-6">
         <div class="single-footer-widget">
-          <h6>About Agency</h6>
+          <h6>Acerca de Business Travel</h6>
           <p>
-            The world has become so fast paced that people don’t want to stand by reading a page of information to be
-            they would much rather look at a presentation and understand
+          En Business Travel, nos apasiona hacer realidad los sueños de viaje de nuestros clientes. Como agencia de viajes de confianza, nos dedicamos a proporcionar experiencias inolvidables y servicios de calidad. Nuestro objetivo es brindarte un servicio personalizado y adaptado a tus necesidades, ofreciéndote los mejores paquetes turísticos y opciones de viaje.
           </p>
         </div>
       </div>
@@ -23,20 +22,12 @@
                 <li><a href="MainController.php?action=page-contactanos">Contactanos</a></li>
               </ul>
             </div>
-            <div class="col">
-              <ul>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>
       <div class="col-lg-4  col-md-6 col-sm-6">
         <div class="single-footer-widget">
-          <h6>NEWSLETTER</h6>
+          <h6>Busca tu destino</h6>
           <p>
             Si deseas saber todos nuestros Paquetes.
           </p>
