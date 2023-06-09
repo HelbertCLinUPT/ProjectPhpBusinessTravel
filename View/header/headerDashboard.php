@@ -4,7 +4,7 @@ if (@!isset($_SESSION)) {
 }
 
 if (@$_SESSION['rol'] != 2) {
-    header("Location:index.php");
+    header("Location:MainController.php?action=main-index");
     exit();
 }
 

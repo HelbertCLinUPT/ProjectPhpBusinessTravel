@@ -107,6 +107,7 @@ switch ($action) {
     case 'proveedor-delete':
         $proveedorController->delete($id);
         break;
+
         // Login
     case 'login-user':
         $loginController->index();
@@ -116,6 +117,8 @@ switch ($action) {
         break;
     case 'login-register':
         $loginController->registrarse();
+    case 'login-recuperarcuenta':
+        $loginController->RecuperarCuenta();
         break;
     case 'login-logout':
         $loginController->salir();
