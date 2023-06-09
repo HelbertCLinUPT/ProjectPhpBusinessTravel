@@ -45,6 +45,7 @@
                                             <th>ID</th>
                                             <th>Nombre</th>
                                             <th>Imagen</th>
+                                            <th>Destino</th>
                                             <th>PrecioTotal</th>
                                             <th>Duracion</th>
                                             
