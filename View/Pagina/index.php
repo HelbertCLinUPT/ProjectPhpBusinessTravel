@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Safario Travel - Home</title>
+  <title>Home</title>
   <link rel="icon" href="View/Pagina/img/Fevicon.png" type="image/png">
   <link rel="stylesheet" href="View/Pagina/vendors/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="View/Pagina/css/style.css">
@@ -21,10 +20,8 @@
       <div class="row align-items-center text-center text-md-left">
         <div class="col-md-6 col-lg-5 mb-5 mb-md-0">
           <h1>Viajes de calidad con Business Travel</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum commodi deserunt voluptatem et in, id nihil,
-            reprehenderit, explicabo eius officiis voluptatum. Consectetur, nostrum aliquam tempore inventore provident
-            quia distinctio vitae? </p>
-          <a class="button button-hero mt-4" href="#">Ver las Ofertas</a>
+          <p>Business Travel es una asombrosa agencia de viajes especializada en turismo receptivo y emisivo, ofreciendo fabulosos paquetes turísticos que te transportarán a destinos de ensueño. ¡Embárcate en nuestras increíbles aventuras y descubre la belleza del mundo con estilo y elegancia!</p>
+          <a class="button button-hero mt-4" href="MainController.php?action=page-paquetes">Ver las Ofertas</a>
         </div>
         <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">
           <img class="img-fluid" src="View/Pagina/img/home/hero-img.png" alt="">
