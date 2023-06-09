@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `paqueteturistico` (
   `preciototal` double NOT NULL,
   `imagen` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Volcando datos para la tabla proyectophp.paqueteturistico: ~13 rows (aproximadamente)
 /*!40000 ALTER TABLE `paqueteturistico` DISABLE KEYS */;
@@ -99,8 +99,8 @@ CREATE TABLE IF NOT EXISTS `reservainteresados` (
   PRIMARY KEY (`id`),
   KEY `FK_paqueteturistico_usuarios` (`fkidUsuario`),
   KEY `FK_paqueteturistico_servicio` (`fkidServicio`),
-  CONSTRAINT `FK_paqueteturistico_servicio` FOREIGN KEY (`fkidServicio`) REFERENCES `servicios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_paqueteturistico_usuarios` FOREIGN KEY (`fkidUsuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `FK_paqueteturistico_usuarios` FOREIGN KEY (`fkidUsuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_reservainteresados_paqueteturistico` FOREIGN KEY (`fkidServicio`) REFERENCES `paqueteturistico` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Volcando datos para la tabla proyectophp.reservainteresados: ~10 rows (aproximadamente)
@@ -161,9 +161,7 @@ INSERT INTO `servicios` (`id`, `nombre`, `costo`, `fkidPaqueteTuristico`, `fkidP
 	(9, 'Espectáculos culturales', 300.00, 4, '864209753'),
 	(10, 'Safari en la selva', 700.00, 3, '975318624'),
 	(11, 'Senderismo en montañas', 400.00, 1, '632459781'),
-	(12, 'Paquetes turísticos personalizados', 1200.00, 2, '718293546'),
-	(13, 'City tours', 280.00, 4, '987654321'),
-	(14, 'Servicio de transporte al aeropuerto', 200.00, 3, '543210987');
+	(12, 'Paquetes turísticos personalizados', 1200.00, 3, '718293546');
 /*!40000 ALTER TABLE `servicios` ENABLE KEYS */;
 
 -- Volcando estructura para tabla proyectophp.usuarios
@@ -190,7 +188,7 @@ INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `password`, `numeroCelular`,
 	(5, 'Carolina', 'Lopez', '$2y$10$tUdKI21G3Fz52TUZi/aSNevlIL132RWVwwU43PvPwgE9Ge3H7vBVe', '111222333', 2, 'carolina@gmail.com'),
 	(6, 'Pedro', 'Rodríguez', '$2y$10$tUdKI21G3Fz52TUZi/aSNevlIL132RWVwwU43PvPwgE9Ge3H7vBVe', '5555555555', 1, 'pedro.rodriguez@example.com'),
 	(7, 'Laura', 'González', '$2y$10$tUdKI21G3Fz52TUZi/aSNevlIL132RWVwwU43PvPwgE9Ge3H7vBVe', '6666666666', 2, 'laura.gonzalez@example.com'),
-	(8, 'Carlos', 'Martínez', '$2y$10$tUdKI21G3Fz52TUZi/aSNevlIL132RWVwwU43PvPwgE9Ge3H7vBVe', '7777777777', 1, 'carlos.martinez@example.com'),
+	(8, 'Carlos', 'Martínez', '$2y$10$tUdKI21G3Fz52TUZi/aSNevlIL132RWVwwU43PvPwgE9Ge3H7vBVe', '7777777777', 3, 'carlos.martinez@example.com'),
 	(9, 'Sofía', 'Herrera', '$2y$10$tUdKI21G3Fz52TUZi/aSNevlIL132RWVwwU43PvPwgE9Ge3H7vBVe', '8888888888', 2, 'sofia.herrera@example.com'),
 	(10, 'Juan', 'Pedro', '$2y$10$tUdKI21G3Fz52TUZi/aSNevlIL132RWVwwU43PvPwgE9Ge3H7vBVe', '123456789', 1, 'pedro@gmail.com');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
