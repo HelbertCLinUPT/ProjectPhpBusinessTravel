@@ -14,7 +14,7 @@
 
 
 -- Volcando estructura de base de datos para proyectophp
-CREATE DATABASE IF NOT EXISTS `proyectophp` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE IF NOT EXISTS `proyectophp` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `proyectophp`;
 
 -- Volcando estructura para tabla proyectophp.paqueteturistico
@@ -24,9 +24,9 @@ CREATE TABLE IF NOT EXISTS `paqueteturistico` (
   `direccion` varchar(50) NOT NULL,
   `duracion` int NOT NULL,
   `preciototal` double NOT NULL,
-  `imagen` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `imagen` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Volcando datos para la tabla proyectophp.paqueteturistico: ~13 rows (aproximadamente)
 /*!40000 ALTER TABLE `paqueteturistico` DISABLE KEYS */;
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `pedidos` (
   PRIMARY KEY (`id`),
   KEY `FK_pedidos_usuarios` (`fkidusuario`),
   CONSTRAINT `FK_pedidos_usuarios` FOREIGN KEY (`fkidusuario`) REFERENCES `usuarios` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Volcando datos para la tabla proyectophp.pedidos: ~10 rows (aproximadamente)
 /*!40000 ALTER TABLE `pedidos` DISABLE KEYS */;
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `proveedores` (
   `nombre` varchar(50) NOT NULL,
   `pais` varchar(50) NOT NULL,
   PRIMARY KEY (`ruc`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Volcando datos para la tabla proyectophp.proveedores: ~10 rows (aproximadamente)
 /*!40000 ALTER TABLE `proveedores` DISABLE KEYS */;
@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `reservainteresados` (
   KEY `FK_paqueteturistico_servicio` (`fkidServicio`),
   CONSTRAINT `FK_paqueteturistico_usuarios` FOREIGN KEY (`fkidUsuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_reservainteresados_paqueteturistico` FOREIGN KEY (`fkidServicio`) REFERENCES `paqueteturistico` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Volcando datos para la tabla proyectophp.reservainteresados: ~10 rows (aproximadamente)
 /*!40000 ALTER TABLE `reservainteresados` DISABLE KEYS */;
@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `roles` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Volcando datos para la tabla proyectophp.roles: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
@@ -145,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `servicios` (
   KEY `FK_servicios_paqueteturistico` (`fkidPaqueteTuristico`),
   CONSTRAINT `FK_servicios_paqueteturistico` FOREIGN KEY (`fkidPaqueteTuristico`) REFERENCES `paqueteturistico` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_servicios_proveedor` FOREIGN KEY (`fkidProveedor`) REFERENCES `proveedores` (`ruc`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Volcando datos para la tabla proyectophp.servicios: ~14 rows (aproximadamente)
 /*!40000 ALTER TABLE `servicios` DISABLE KEYS */;
@@ -176,7 +176,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   PRIMARY KEY (`id`),
   KEY `FK_usuarios_roles` (`rol`),
   CONSTRAINT `FK_usuarios_roles` FOREIGN KEY (`rol`) REFERENCES `roles` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Volcando datos para la tabla proyectophp.usuarios: ~10 rows (aproximadamente)
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;

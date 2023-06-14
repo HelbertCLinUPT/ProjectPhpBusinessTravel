@@ -17,98 +17,64 @@
   <?php
   include 'View/header/headerPagina.php';
   ?>
+<br><br><br>
 
-  <!--================Hero Banner SM Area Start =================-->
-  <section class="hero-banner-sm magic-ball magic-ball-banner" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 0px -80px" data-top-bottom="background-position: 0 100px">
-    <div class="container">
-      <div class="hero-banner-sm-content">
-        <h1>About Us</h1>
-        <p>Air seed winged lights saw kind whales in sixth best a dont seas dron image so fish all tree on</p>
+
+<section class="carrusel">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="View/Pagina/img/banner/nosotros2.jpg" class="d-block w-100" alt="Imagen 2">
+      </div>
+      <div class="carousel-item">
+        <img src="View/Pagina/img/banner/nosotros3.jpg" class="d-block w-100" alt="Imagen 3">
+      </div>
+      <div class="carousel-item">
+        <img src="View/Pagina/img/banner/nosotros4.jpg" class="d-block w-100" alt="Imagen 4">
+      </div>
+      <div class="carousel-item">
+        <img src="View/Pagina/img/banner/nosotros5.jpg" class="d-block w-100" alt="Imagen 5">
+      </div>
+      <div class="carousel-item">
+        <img src="View/Pagina/img/banner/nosotros6.jpg" class="d-block w-100" alt="Imagen 6">
+      </div>
+      <div class="carousel-item">
+        <img src="View/Pagina/img/banner/nosotros7.jpg" class="d-block w-100" alt="Imagen 7">
       </div>
     </div>
-  </section>
-
-  <section class="section-padding magic-ball magic-ball-sm magic-ball-about">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-7 col-md-6 mb-4 mb-md-0">
-          <div class="about-img">
-            <img class="img-fluid" src="img/home/about-img.png" alt="">
-          </div>
-        </div>
-        <div class="col-lg-5 col-md-6 align-self-center about-content">
-          <h2>Exploration is <br class="d-none d-xl-block"> really the essence <br class="d-none d-xl-block"> of the
-            human spirit</h2>
-          <p>Make she'd moved divided air. Whose tree that replenish tone hath own upon them it multiply was blessed is
-            lights make gathering so day dominion so creeping air was made.</p>
-          <a class="button" href="#">Learn More</a>
-        </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</section>
+<section class="nosotros">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="View/Pagina/img/banner/nosotros.jpg" alt="Imagen Business Travel">
+        
+      </div>
+      <div class="col-md-6">
+      <p>Somos Business Travel, una empresa apasionada por brindar experiencias de viaje excepcionales. Nos dedicamos a diseñar y ofrecer los mejores paquetes turísticos, con el objetivo de hacer realidad los sueños de nuestros clientes. Con años de experiencia en la industria, nos enorgullece contar con un equipo de profesionales dedicados y comprometidos en brindar un servicio de calidad. Nos esforzamos por superar las expectativas, ofreciendo destinos fascinantes, atención personalizada y un enfoque en la satisfacción del cliente. Ya sea que desees explorar destinos históricos, disfrutar de hermosas playas o sumergirte en la naturaleza, en Business Travel nos ocupamos de cada detalle para que tu experiencia de viaje sea inolvidable. Confía en nosotros para planificar tus próximas aventuras y descubre el mundo de posibilidades que tenemos para ofrecerte.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section-margin">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-xl-5 align-self-center mb-5 mb-lg-0">
-          <div class="search-content">
-            <h2>Search suitable <br class="d-none d-xl-block"> and affordable plan <br class="d-none d-xl-block"> for
-              your tour</h2>
-            <p>Make she'd moved divided air. Whose tree that replenish tone hath own upon them it multiply was blessed
-              is lights make gathering so day dominion so creeping</p>
-            <a class="button" href="MainController.php?action=login-user">Mas informacion</a>
-          </div>
-        </div>
-        <div class="col-lg-6 col-xl-6 offset-xl-1">
-          <div class="search-wrapper">
-            <h3>Search Package</h3>
-            <form class="search-form" action="#">
-              <div class="form-group">
-                <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Recipient's username">
-                  <div class="input-group-append">
-                    <span class="input-group-text"><i class="ti-search"></i></span>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <select name="category" id="category">
-                  <option value="disabled" disabled selected>Category</option>
-                  <option value="8 AM">8 AM</option>
-                  <option value="12 PM">12 PM</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <select name="tourDucation" id="tourDuration">
-                  <option value="disabled" disabled selected>Tour duration</option>
-                  <option value="8 AM">8 AM</option>
-                  <option value="12 PM">12 PM</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <div class="input-group">
-                  <input type="date" class="form-control">
-                  <div class="input-group-append">
-                    <span class="input-group-text"><i class="ti-notepad"></i></span>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <select name="priceRange" id="priceRange">
-                  <option value="disabled" disabled selected>Price range</option>
-                  <option value="8 AM">8 AM</option>
-                  <option value="12 PM">12 PM</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <button class="button border-0 mt-3" type="submit">Search Package</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
+
+
+ 
   <!--================Search Package section End =================-->
 
 

@@ -28,22 +28,12 @@
   ?>
 
 
-
-  <section class="hero-banner-sm magic-ball magic-ball-banner" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 0px -80px" data-top-bottom="background-position: 0 100px">
-    <div class="container">
-      <div class="hero-banner-sm-content" >
-        <h1>Packages</h1>
-        <p>Air seed winged lights saw kind whales in sixth best a dont seas dron image so fish all tree on</p>
-      </div>
-    </div>
-  </section>
-
   <section class="section-margin">
     <div class="container">
       <div class="section-intro text-center pb-90px">
         <img class="section-intro-img" src="View/Pagina/img/home/section-icon.png" alt="">
-        <h2>Our Popular Services</h2>
-        <p>Fowl have fruit moveth male they are that place you will lesser</p>
+        <h2>Nuestros Servicios</h2>
+        
       </div>
 
 
