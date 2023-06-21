@@ -26,7 +26,6 @@ class LoginController
             $usuario = $this->LoginDAO->ingresar($usuario);
 
             if (isset($usuario)) {
-                session_start();
                 $_SESSION['id'] = $usuario->getId();
                 $_SESSION['nombre'] = $usuario->getNombre();
                 $_SESSION['apellido']= $usuario->getApellido();
@@ -76,7 +75,6 @@ class LoginController
 
     public function salir()
     {
-        session_start();
         session_destroy();
         include 'View/Pagina/login.php';
     }

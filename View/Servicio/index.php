@@ -50,8 +50,9 @@
                                             <th>ID</th>
                                             <th>Nombre</th>
                                             <th>Costo</th>
-                                            <th>Proveedor</th>
                                             <th>Paquete Turistico</th>
+                                            <th>Proveedor</th>
+                                            
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>

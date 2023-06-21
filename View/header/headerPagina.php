@@ -22,7 +22,6 @@
           </ul>
 
           <?php
-          session_start();
           if (!isset($_SESSION['rol'])) {
           ?>
             <div class="text-center py-2">

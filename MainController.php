@@ -22,6 +22,11 @@ $proveedorController = new ProveedorController();
 $loginController = new LoginController();
 $PedidoController = new PedidoController();
 
+
+
+session_start();
+
+
 switch ($action) {
         // User-related actions
     case 'usuario-index':
@@ -85,13 +90,13 @@ switch ($action) {
         $servicioController->index();
         break;
     case 'servicio-add':
-        $proveedores = $proveedorController->listar(); // Llamar a la función listar() en el proveedorController
+        $proveedores = $proveedorController->listar(); 
         $paqueteturisticos = $paqueteTuristicoController->listar();
         $result = $servicioController->add($proveedores, $paqueteturisticos);
         break;
 
     case 'servicio-edit':
-        $proveedores = $proveedorController->listar(); // Llamar a la función listar() en el proveedorController
+        $proveedores = $proveedorController->listar(); 
         $paqueteturisticos = $paqueteTuristicoController->listar();
         $result = $servicioController->edit($id,$proveedores, $paqueteturisticos);
         break;

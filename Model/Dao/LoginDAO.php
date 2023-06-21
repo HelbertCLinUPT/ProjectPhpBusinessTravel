@@ -20,7 +20,6 @@ class LoginDAO implements LoginDaoInterface{
             $row = $result->fetch_assoc();
             $passBD = $row['password'];
             if (password_verify($passwordUsuario, $passBD)) {
-                echo "El password es correcto";
                 $usuario->setId($row['id']);
                 $usuario->setNombre($row['nombre']);
                 $usuario->setApellido($row['apellido']);

@@ -8,7 +8,18 @@ class ReservaInteresadoDAO implements ReservaInteresadoDaoInterface {
     public function getAllReservaInteresados() {
         global $conn;
 
-        $query = "SELECT * FROM reservainteresados";
+        //$query = "SELECT * FROM reservainteresados";
+
+
+        $query = "
+        SELECT s.id,s.nombre,s.precioTotal,p.nombre AS fkidServicio,concat(usu.nombre,' ',usu.apellido) AS fkidUsuario
+        FROM reservainteresados AS s
+        JOIN paqueteturistico AS p
+        ON s.fkidServicio = p.id
+        JOIN usuarios AS usu
+        ON s.fkidUsuario = usu.id";
+
+
         $result = $conn->query($query);
 
         $reservainteresados = array();

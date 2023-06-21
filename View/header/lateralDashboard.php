@@ -25,13 +25,14 @@
                 <a class="collapse-item" href="MainController.php?action=paquete-index">Paquete Turistico</a>
                 <a class="collapse-item" href="MainController.php?action=servicio-index">Servicio</a>
                 <a class="collapse-item" href="MainController.php?action=pedido-index">Pedido</a>
-                `
+                <a class="collapse-item" href="MainController.php?action=interesado-index">Reservas</a>
+                <br>
 
                 <!-- <a class="collapse-item" href="utilities-other.php">Ofertas</a> -->
                 <h6 class="collapse-header">Personas:</h6>
                 <a class="collapse-item" href="MainController.php?action=usuario-index">Usuario</a>
                 <a class="collapse-item" href="MainController.php?action=proveedor-index">Proveedor</a>
-                <a class="collapse-item" href="MainController.php?action=interesado-index">Interesado</a>
+                
             </div>
         </div>
     </li>
