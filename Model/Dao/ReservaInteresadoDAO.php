@@ -2,9 +2,9 @@
 
 require_once 'db_connect.php';
 require_once 'Model/ReservaInteresado.php';
-require_once 'Model/Dao/ReservaInteresadoDaoInterface.php';
+require_once 'Model/Dao/ReservaInteresadoDAOInterface.php';
 
-class ReservaInteresadoDAO implements ReservaInteresadoDaoInterface {
+class ReservaInteresadoDAO implements ReservaInteresadoDAOInterface {
     public function getAllReservaInteresados() {
         global $conn;
 

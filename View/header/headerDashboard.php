@@ -4,7 +4,7 @@ if (@$_SESSION['rol'] != '2') {
     <script>
         window.location.href = 'MainController.php?action=main-index';
     </script>
-<?
+<?php
 
 }
 
