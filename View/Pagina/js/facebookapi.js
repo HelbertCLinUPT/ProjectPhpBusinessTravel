@@ -2,7 +2,7 @@
 
 // fetch(`https://graph.facebook.com/me/posts?fields=message,created_time,attachments&access_token=${accessToken}&limit=10`)
 
-fetch(`http://161.132.37.55:3330/api/posts`)
+fetch(`http://api.erick.wtf:8888/api/posts`)
   .then(response => response.json())
   .then(data => {
     if (data.hasOwnProperty('data')) {
