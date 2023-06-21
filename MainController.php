@@ -112,6 +112,9 @@ switch ($action) {
     case 'proveedor-delete':
         $proveedorController->delete($id);
         break;
+    case 'paquete-disenar':
+        include("View/PaqueteTuristico/diseñar.php");
+        break;
         // Login
     case 'login-user':
         $loginController->index();
