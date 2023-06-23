@@ -12,7 +12,14 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="View/static/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="https://unpkg.com/tailwindcss@1.9.6/dist/tailwind.min.css" rel="stylesheet">
-    <script src="View/static/js/aunenproceso.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+    <script src="View/Pagina/js/Chatgpt.js"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -35,34 +42,40 @@
                                         <div class="flex flex-row items-center h-16 rounded-xl px-4 py-4">
                                             <div class="flex-grow ml-4">
                                                 <div class="relative w-full">
-                                                    <input type="text" class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10" placeholder="Ingrese su paquete" />
+                                                    <input type="text" class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10" name="consulta" placeholder="Ingrese los detalles del paquete o consultas" />
                                                 </div>
                                             </div>
                                             <div class="ml-2">
-                                                <button class="flex items-center justify-center bg-blue-700 hover:bg-indigo-600 rounded-xl text-white px-24 py-1 flex-shrink-0 w-16">
-                                                    BUSCAR
-                                                    <span class="ml-4 w-6 h-7 flex items-center justify-center">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512">
-                                                            <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                                                            <path style="fill: #ffffff;" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
-                                                        </svg>
-                                                    </span>
-                                                </button>
+                                                <div id="buscar-container" class="relative">
+                                                    <button id="buscar-btn" class="inline-flex items-center justify-center bg-blue-700 hover:bg-indigo-600 rounded-xl text-white px-4 py-2 flex-shrink-0 w-auto h-auto">
+                                                        <span class="w-6 h-7 flex items-center justify-center">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512">
+                                                                <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                                                <path style="fill: #ffffff;" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                                                            </svg>
+                                                        </span>
+                                                    </button>
+
+                                                    <div id="loading-indicator" class="absolute top-0 left-0 h-8 w-8 bg-white bg-opacity-50 flex items-center justify-center rounded-xl hidden">
+                                                        <div class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-900"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
+                                        <p id="mensaje-error" class="text-red-500 hidden">Por favor, ingresa una consulta válida.</p>
+
                                         <div class="flex flex-col mt-4">
                                             <div class="flex flex-row gap-4">
                                                 <div class="w-4/5">
-                                                    <div class="relative text-sm bg-white py-2 px-4 shadow rounded-xl mb-4 h-full">
-                                                        CONTENIDO DE LAS CONSULTAS
+                                                    <div id="resultado-consulta" class="relative text-sm bg-white py-2 px-4 shadow rounded-xl mb-4 h-full">
                                                     </div>
                                                 </div>
                                                 <div class="w-1/5">
                                                     <div class="rounded-xl bg-white py-3 px-3">
-                                                        <button class="bg-blue-700 hover:bg-indigo-600 text-white w-full py-2 rounded-xl mb-2">VAR1</button>
-                                                        <button class="bg-blue-700 hover:bg-indigo-600 text-white w-full py-2 rounded-xl mb-2">VAR2</button>
-                                                        <button class="bg-blue-700 hover:bg-indigo-600 text-white w-full py-2 rounded-xl mb-2">VAR3</button>
-                                                        <button class="bg-blue-700 hover:bg-indigo-600 text-white w-full py-2 rounded-xl mb-2">VAR4</button>
+                                                        <button class="bg-orange-500 hover:bg-orange-700 text-white w-full py-2 px-4 mb-2 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50">Guardar</button>
+                                                        <button onclick="descargarComoPDF()" class="bg-gray-600 hover:bg-gray-700 text-white w-full py-2 px-4 mb-2 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50">Descargar</button>
+
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -102,7 +115,11 @@
 
     <!-- Custom scripts for all pages-->
     <script src="View/static/js/sb-admin-2.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        window.jsPDF = window.jspdf.jsPDF;
+    </script>
+    <script type="text/javascript" src="View/Pagina/js/descargarpdf.js"></script>
 </body>
 
 </html>
