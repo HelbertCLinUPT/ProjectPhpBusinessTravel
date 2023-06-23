@@ -14,7 +14,7 @@
     <link href="https://unpkg.com/tailwindcss@1.9.6/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 
-    <script src="View/Pagina/js/Chatgpt.js"></script>
+    <script src="View/Static/js/Chatgpt.js"></script>
     <style>
         .hidden {
             display: none;
@@ -119,7 +119,7 @@
     <script>
         window.jsPDF = window.jspdf.jsPDF;
     </script>
-    <script type="text/javascript" src="View/Pagina/js/descargarpdf.js"></script>
+    <script type="text/javascript" src="View/Static/js/descargarpdf.js"></script>
 </body>
 
 </html>
