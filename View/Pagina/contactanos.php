@@ -18,18 +18,6 @@
   <?php
   include 'View/header/headerPagina.php';
   ?>
-
-
-  <!--================Hero Banner SM Area Start =================-->
-  <section class="hero-banner-sm magic-ball magic-ball-banner" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 0px -80px" data-top-bottom="background-position: 0 100px">
-    <div class="container">
-      <div class="hero-banner-sm-content">
-        <h1>Contactanos</h1>
-        <p>¡Nos encantaría escucharte! Si tienes alguna pregunta, consulta o comentario, no dudes en contactarnos. Estamos aquí para ayudarte y brindarte toda la información que necesitas para planificar tu próximo viaje.</p>
-      </div>
-    </div>
-  </section>
-  <!--================Hero Banner SM Area End =================-->
   <section class="section-margin">
     <div class="container">
       <div class="row ">

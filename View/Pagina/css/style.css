@@ -2871,11 +2871,22 @@ nosotros
     flex-direction: column-reverse;
   }
 }
+
+/*Galeria de ofertas*/
 .gallery {
+  margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* Cambiado para mostrar 3 imágenes por fila */
   grid-gap: 20px;
+  max-width: 900px; /* Ajusta el ancho máximo según tus necesidades */
+
+  /* Estilos para dispositivos móviles (celulares) */
+  @media (max-width: 576px) {
+    grid-template-columns: repeat(1, 1fr); /* Cambia a 2 imágenes por fila en dispositivos móviles */
+    max-width: 90%; /* Hace que la galería ocupe todo el ancho en dispositivos móviles */
+  }
 }
+
 
 .image {
   position: relative;

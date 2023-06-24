@@ -79,7 +79,7 @@
               <img class="img-fluid" src="View/Pagina/img/home/service3.png" alt="">
             </div>
             <div class="service-card-body">
-              <br><br><br><br><br><br>
+              <br><br><br><br><br><br><br>
               <h3>Reserva en Destino</h3>
               <p>"Reserva tu destino soñado con nosotros".
               </p>

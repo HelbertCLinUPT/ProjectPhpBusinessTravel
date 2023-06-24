@@ -17,34 +17,44 @@
   <?php
   include 'View/header/headerPagina.php';
   ?>
+
+<style>
+  .carousel-item img {
+    width: 70%; /* Tamaño de las imágenes, ajusta según tus necesidades */
+    height: 20%;
+    margin: 0 auto; /* Centrar horizontalmente las imágenes */
+  }
+</style>
 <br><br><br>
-
-
+<div class="mt-5"></div> <!-- Espacio utilizando clase de margen superior mt-4 -->
+<div class="section-intro text-center pb-30px my-xl-3">
+  <h2>Nuestras aventuras</h2>
+</div>
 <section class="carrusel">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+      <li data-target="#myCarousel" data-slide-to="5"></li>
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="View/Pagina/img/banner/nosotros2.jpg" class="d-block w-100" alt="Imagen 2">
+        <img src="View/Pagina/img/banner/nosotros2.jpg" class="d-block" alt="Imagen 2">
       </div>
       <div class="carousel-item">
-        <img src="View/Pagina/img/banner/nosotros3.jpg" class="d-block w-100" alt="Imagen 3">
+        <img src="View/Pagina/img/banner/nosotros4.jpg" class="d-block" alt="Imagen 4">
       </div>
       <div class="carousel-item">
-        <img src="View/Pagina/img/banner/nosotros4.jpg" class="d-block w-100" alt="Imagen 4">
+        <img src="View/Pagina/img/banner/nosotros5.jpg" class="d-block" alt="Imagen 5">
       </div>
       <div class="carousel-item">
-        <img src="View/Pagina/img/banner/nosotros5.jpg" class="d-block w-100" alt="Imagen 5">
+        <img src="View/Pagina/img/banner/nosotros6.jpg" class="d-block" alt="Imagen 6">
       </div>
       <div class="carousel-item">
-        <img src="View/Pagina/img/banner/nosotros6.jpg" class="d-block w-100" alt="Imagen 6">
-      </div>
-      <div class="carousel-item">
-        <img src="View/Pagina/img/banner/nosotros7.jpg" class="d-block w-100" alt="Imagen 7">
+        <img src="View/Pagina/img/banner/nosotros7.jpg" class="d-block" alt="Imagen 7">
       </div>
     </div>
     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
@@ -57,6 +67,9 @@
     </a>
   </div>
 </section>
+
+
+
 <section class="nosotros">
   <div class="container">
     <div class="row">
