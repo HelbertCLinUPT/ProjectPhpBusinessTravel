@@ -155,7 +155,6 @@ switch ($action) {
         include("View/Pagina/contactanos.php");
         break;
     case 'paquete-detalle':
-        $id = $_GET['id'];
         $paqueteTuristicoController->detalle($id);
         break;
         // Admin

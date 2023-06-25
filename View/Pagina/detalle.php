@@ -50,7 +50,7 @@
           </ul>
           <h3 class="mb-2">Proveedor:</h3>
           <p><?php echo $paqueteTuristico->offsetGet('proveedor'); ?></p>
-          <a href="http://localhost/ProjectPhpBusinessTravel/MainController.php?action=page-paquetes" class="btn btn-primary">Volver</a>
+          <a href="MainController.php?action=page-paquetes" class="btn btn-primary">Volver</a>
         <?php else: ?>
           <p>PaqueteTuristico not found.</p>
         <?php endif; ?>
