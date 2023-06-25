@@ -130,6 +130,9 @@ switch ($action) {
     case 'login-recuperar':
         $loginController->RecuperarCuenta();
         break;
+    case 'login-forgot':
+        $loginController->ReestablecerPassword();
+        break;
 
     case 'login-register':
         $loginController->registrarse();

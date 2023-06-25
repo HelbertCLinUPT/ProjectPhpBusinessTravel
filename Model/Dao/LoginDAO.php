@@ -3,6 +3,7 @@
 require_once 'db_connect.php';
 require_once 'Model/Usuario.php';
 require_once 'Model/Dao/LoginDaoInterface.php';
+require_once 'Model/Dao/UsuarioDAO.php';
 require 'vendor/autoload.php';
 
 
@@ -35,6 +36,21 @@ class LoginDAO implements LoginDaoInterface
         }
         return null;
     }
+    public function ReestablecerPassword($codigo, $password)
+    {
+        global $conn;
+        $query = "SELECT * FROM usuarios where token='$codigo'; ";
+        $result = $conn->query($query);
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $usuariodao = new UsuarioDAO;
+            $usuario = $usuariodao->getUsuarioById($row['id']);
+            $usuario->setPassword($password);
+            return  $usuariodao->updateUsuario($usuario);
+
+        }
+        return false;
+    }
 
     public function RecuperarCuenta($correo)
     {
@@ -42,6 +58,8 @@ class LoginDAO implements LoginDaoInterface
         $query = "SELECT * FROM usuarios where email='$correo'; ";
         $result = $conn->query($query);
         if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $token = $row['token'];
             $mail = new PHPMailer\PHPMailer\PHPMailer();
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
@@ -51,11 +69,13 @@ class LoginDAO implements LoginDaoInterface
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
             $mail->setFrom('hc2020067571@virtual.upt.pe', 'Bussinenss');
-            $mail->addAddress($correo, 'Helbert');
+            $mail->addAddress($correo, 'Usuario');
             $mail->isHTML(true);
-            $mail->Subject = 'Asunto del correo';
-            $mail->Body = 'Contenido del correo en formato HTML';
-            $mail->AltBody = 'Contenido del correo en texto plano (opcional)';
+            $mail->Subject = 'Recuperacion de cuenta BussinessTravel';
+
+            $mail->Body = 'hola, nos comunicamos con usted para decirle que la reacctivacion de su cuenta se encuentra en proceso con siguiente token ' . $token . ', porfavor confirmenos al siguiente link: https://app.helbert.info/MainController.php?action=login-forgot';
+            //$mail->AltBody = 'Contenido del correo en texto plano (opcional)';
+
             if ($mail->send())
                 return true;
             else
@@ -73,6 +93,7 @@ class LoginDAO implements LoginDaoInterface
         $numeroCelular = $usuario->getNumeroCelular();
         $rol = $usuario->getRol();
         $email = $usuario->getEmail();
+        $token = substr(uniqid(), -8);
 
         $query = "SELECT * FROM usuarios WHERE email = ?";
         $stmt = $conn->prepare($query);
@@ -86,9 +107,9 @@ class LoginDAO implements LoginDaoInterface
 
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        $query = "INSERT INTO usuarios (nombre, apellido, password, numeroCelular, rol, email) VALUES (?, ?, ?, ?, ?, ?)";
+        $query = "INSERT INTO usuarios (nombre, apellido, password, numeroCelular, rol, email,token) VALUES (?, ?, ?, ?, ?, ?,?)";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param("ssssis", $nombre, $apellido, $hashedPassword, $numeroCelular, $rol, $email);
+        $stmt->bind_param("ssssiss", $nombre, $apellido, $hashedPassword, $numeroCelular, $rol, $email,$token);
         $stmt->execute();
 
         if ($stmt->affected_rows > 0) {

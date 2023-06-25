@@ -52,23 +52,32 @@
                                                     <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="numeroCelular">
                                                 </div>
                                             </div>
+
                                             <div class="form-group row">
                                                 <label for="rol" class="col-sm-3 col-form-label">Rol:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="rol">
+                                                    <select class="form-control" style="font-size: 18px;" name="rol" required>
+                                                        <option value="">Seleccionar...</option>
+
+                                                        <option value="1">Usuario</option>
+                                                        <option value="2">Admin</option>
+                                                        <option value="3">Interesado</option>
+
+                                                    </select>
                                                 </div>
                                             </div>
+
 
                                             <div class="form-group row">
                                                 <label for="password" class="col-sm-3 col-form-label">Password:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;"  name="password">
+                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="password">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="email" class="col-sm-3 col-form-label">Email:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;"  name="email">
+                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="email">
                                                 </div>
                                             </div>
 
@@ -77,7 +86,7 @@
                                                     <input type="submit" value="Agregar" style="font-size: 18px;" class="btn btn-primary btn-user btn-block">
                                                 </div>
                                             </div>
-                                            
+
                                             <hr>
                                         </form>
 

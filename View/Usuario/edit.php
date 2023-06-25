@@ -54,7 +54,7 @@
                                                     <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="password" placeholder="ingrese un nuevo password" required>
                                                 </div>
                                             </div>
-                                
+
                                             <div class="form-group row">
                                                 <label for="numeroCelular" class="col-sm-3 col-form-label">Número de Celular:</label>
                                                 <div class="col-sm-9">
@@ -66,15 +66,21 @@
                                                 <div class="col-sm-9">
                                                     <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="email" value="<?php echo $usuario->getEmail(); ?>" required>
                                                 </div>
-                                            </div>
-
+                                            </div>                                
                                             <div class="form-group row">
                                                 <label for="rol" class="col-sm-3 col-form-label">Rol:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="rol" value="<?php echo $usuario->getRol(); ?>" required>
+                                                    <select class="form-control" style="font-size: 18px;" name="rol" required>
+                                                        <option value="">Seleccionar...</option>
+                                                        <option value="1" <?php if ($usuario->getRol() == "1") echo "selected"; ?>>Usuario</option>
+                                                        <option value="2" <?php if ($usuario->getRol() == "2") echo "selected"; ?>>Admin</option>
+                                                        <option value="3" <?php if ($usuario->getRol() == "3") echo "selected"; ?>>Interesado</option>
+                                                    </select>
                                                 </div>
                                             </div>
-                                            
+
+
+
 
                                             <div class="form-group row">
                                                 <div class="col-sm-9 offset-sm-3">
