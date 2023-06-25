@@ -78,5 +78,10 @@ class PedidoController {
             echo 'Error deleting the pedido.';
         }
     }
+
+    public function indexstadistic() {
+        $pedidos = $this->pedidoDAO->getAllPedido();
+        include 'View/index.php';
+    }
 }
 ?>

@@ -8,6 +8,7 @@ class Usuario {
     private $numeroCelular;
     private $rol;
     private $email;
+    private $token;
     
 
     public function getId() {
@@ -65,6 +66,14 @@ class Usuario {
 
     public function setEmail($email) {
         $this->email = $email;
+    }
+
+    public function getToken() {
+        return $this->token;
+    }
+
+    public function setToken($token) {
+        $this->id = $token;
     }
 
 

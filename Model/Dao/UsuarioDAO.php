@@ -39,8 +39,9 @@ class UsuarioDAO implements UsuarioDAOInterface{
         $rol = $usuario->getRol();
         $password = password_hash($usuario->getPassword(), PASSWORD_DEFAULT);
         $email=$usuario->getEmail();
+        $token=substr(uniqid(), -8);
 
-        $query = "INSERT INTO usuarios (nombre, apellido, numeroCelular, rol, password,email) VALUES ('$nombre', '$apellido', '$numeroCelular', '$rol','$password','$email')";
+        $query = "INSERT INTO usuarios (nombre, apellido, numeroCelular, rol, password,email,token) VALUES ('$nombre', '$apellido', '$numeroCelular', '$rol','$password','$email','$token')";
         if ($conn->query($query) === TRUE) {
             return true;
         } else {
@@ -64,11 +65,35 @@ class UsuarioDAO implements UsuarioDAOInterface{
             $usuario->setNumeroCelular($row['numeroCelular']);
             $usuario->setRol($row['rol']);
             $usuario->setEmail($row['email']);
+
             return $usuario;
         } else {
             return null;
         }
     }
+
+    public function getUsuarioByEmail($email) {
+        global $conn;
+
+        $query = "SELECT * FROM usuarios WHERE email='$email'";
+        $result = $conn->query($query);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $usuario = new Usuario();
+            $usuario->setId($row['id']);
+            $usuario->setNombre($row['nombre']);
+            $usuario->setApellido($row['apellido']);
+            $usuario->setPassword($row['password']);
+            $usuario->setNumeroCelular($row['numeroCelular']);
+            $usuario->setRol($row['rol']);
+            $usuario->setEmail($row['email']);
+            return $usuario;
+        } else {
+            return null;
+        }
+    }
+
 
     public function updateUsuario($usuario) {
         global $conn;
@@ -80,9 +105,9 @@ class UsuarioDAO implements UsuarioDAOInterface{
         $password = password_hash($usuario->getPassword(), PASSWORD_DEFAULT);
         $rol = $usuario->getRol();
         $email = $usuario->getEmail();
+        $token=substr(uniqid(), -8).$usuario->getId();
 
-
-        $query = "UPDATE usuarios SET nombre='$nombre', apellido='$apellido', numeroCelular='$numeroCelular', rol='$rol' , password='$password' , email='$email' WHERE id=$id";
+        $query = "UPDATE usuarios SET nombre='$nombre', apellido='$apellido', numeroCelular='$numeroCelular', rol='$rol' , password='$password' , email='$email', token='$token' WHERE id=$id";
         if ($conn->query($query) === TRUE) {
             return true;
         } else {

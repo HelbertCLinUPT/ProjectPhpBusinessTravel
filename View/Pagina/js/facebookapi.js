@@ -1,8 +1,6 @@
-// const accessToken = 'EAALgzs2TxoEBAH1sqSg3yHLCsvhRNmuESo3o7r5uCbzisZBsj9QLZBtZBJ94kDMUMAFwbwLINSIlFfcA8gsYr0ZAw76Scws9WeZCRN0s44gywwYFRV7dmxYadGPbmCgkVDh4vmjaCxfvDF0RXVa6HBqjoR2jYlUU6hjZAsKVZAZAwN1ZAxS6ZAqXNo';
+const accessToken = 'EAALgzs2TxoEBAH1sqSg3yHLCsvhRNmuESo3o7r5uCbzisZBsj9QLZBtZBJ94kDMUMAFwbwLINSIlFfcA8gsYr0ZAw76Scws9WeZCRN0s44gywwYFRV7dmxYadGPbmCgkVDh4vmjaCxfvDF0RXVa6HBqjoR2jYlUU6hjZAsKVZAZAwN1ZAxS6ZAqXNo';
 
-// fetch(`https://graph.facebook.com/me/posts?fields=message,created_time,attachments&access_token=${accessToken}&limit=10`)
-
-fetch(`http://api.erick.wtf:8888/api/posts`)
+fetch(`https://graph.facebook.com/me/posts?fields=message,created_time,attachments&access_token=${accessToken}&limit=10`)
   .then(response => response.json())
   .then(data => {
     if (data.hasOwnProperty('data')) {

@@ -17,10 +17,12 @@ class PaqueteTuristicoController
         $paqueteturisticos = $this->paqueteTuristicoDao->getAllPaqueteTuristicos();
         include 'View/PaqueteTuristico/index.php';
     }
+
     public function listar()
     {
         return $this->paqueteTuristicoDao->getAllPaqueteTuristicos();
     }
+
     public function add()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -30,7 +32,6 @@ class PaqueteTuristicoController
             $nombre_archivo = $_FILES['imagen']['name'];
             $preciototal = $_POST['preciototal'];
 
-
             $paqueteTuristico = new PaqueteTuristico();
             $paqueteTuristico->setNombre($nombre);
             $paqueteTuristico->setDireccion($direccion);
@@ -38,16 +39,13 @@ class PaqueteTuristicoController
             $paqueteTuristico->setImagen($nombre_archivo);
             $paqueteTuristico->setPrecioTotal($preciototal);
 
-
-
             if ($this->paqueteTuristicoDao->addPaqueteTuristico($paqueteTuristico)) {
-
-
                 $ruta = $_FILES['imagen']['tmp_name'];
                 $destino = "View/img_paquete/" . $nombre_archivo;
                 copy($ruta, $destino);
 
                 header('Location: MainController.php?action=paquete-index');
+                exit;
             } else {
                 echo 'Error adding the PaqueteTuristico.';
             }
@@ -62,7 +60,7 @@ class PaqueteTuristicoController
             $nombre = $_POST['nombre'];
             $direccion = $_POST['direccion'];
             $duracion = $_POST['duracion'];
-            
+
             $filename = true;
             $imagen = $_FILES['imagen']['name'];
 
@@ -81,17 +79,15 @@ class PaqueteTuristicoController
             $paqueteTuristico->setImagen($imagen);
             $paqueteTuristico->setPrecioTotal($preciototal);
 
-
             if ($this->paqueteTuristicoDao->updatePaqueteTuristico($paqueteTuristico)) {
-
-                if ($filename==true) {
+                if ($filename == true) {
                     $ruta = $_FILES['imagen']['tmp_name'];
                     $destino = "View/img_paquete/" . $imagen;
                     copy($ruta, $destino);
                 }
 
-
                 header('Location: MainController.php?action=paquete-index');
+                exit;
             } else {
                 echo 'Error updating the PaqueteTuristico.';
             }
@@ -109,6 +105,7 @@ class PaqueteTuristicoController
     {
         if ($this->paqueteTuristicoDao->deletePaqueteTuristico($id)) {
             header('Location: MainController.php?action=paquete-index');
+            exit;
         } else {
             echo 'Error deleting the PaqueteTuristico.';
         }
@@ -118,5 +115,20 @@ class PaqueteTuristicoController
     {
         $paqueteturisticos = $this->paqueteTuristicoDao->getAllPaqueteTuristicos();
         include("View/Pagina/paquetes.php");
+    }
+
+    public function detalle($id)
+    {
+        $paquetesTuristicos = $this->paqueteTuristicoDao->listarServicios($id);
+        $paqueteTuristico = null;
+
+        if ($paquetesTuristicos->count() > 0) {
+            $paqueteTuristico = $paquetesTuristicos->offsetGet(0);
+            $servicios = $this->paqueteTuristicoDao->listarServicios($id); // Agrega esta línea
+            $imagen = $paqueteTuristico->offsetGet('imagen');
+            include 'View/Pagina/detalle.php';
+        } else {
+            echo 'PaqueteTuristico not found.';
+        }
     }
 }

@@ -130,6 +130,9 @@ switch ($action) {
     case 'login-recuperar':
         $loginController->RecuperarCuenta();
         break;
+    case 'login-forgot':
+        $loginController->ReestablecerPassword();
+        break;
 
     case 'login-register':
         $loginController->registrarse();
@@ -154,10 +157,13 @@ switch ($action) {
     case 'page-contactanos':
         include("View/Pagina/contactanos.php");
         break;
-
+    case 'paquete-detalle':
+        $paqueteTuristicoController->detalle($id);
+        break;
         // Admin
     case 'admin-index':
-        include("View/index.php");
+        //include("View/index.php");
+        $PedidoController->indexstadistic();
         break;
     default:
         header("location:index.php");

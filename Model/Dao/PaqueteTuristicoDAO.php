@@ -103,4 +103,50 @@ class PaqueteTuristicoDAO implements PaqueteTuristicoDaoInterface
             return false;
         }
     }
+    
+    public function listarServicios($id) {
+        global $conn;
+    
+        $sql = "SELECT
+                    paq.nombre,
+                    paq.direccion,
+                    paq.duracion,
+                    paq.preciototal,
+                    paq.imagen,
+                    s.nombre AS servicio,
+                    pr.nombre AS proveedor
+                FROM
+                    paqueteturistico paq
+                    INNER JOIN servicios s ON s.fkidPaqueteTuristico = paq.id
+                    INNER JOIN proveedores pr ON pr.ruc = s.fkidProveedor
+                WHERE
+                    paq.id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+    
+        $result = $stmt->get_result();
+    
+        $paquetesTuristicos = new ArrayObject(); // Crear una instancia de ArrayObject
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $paqueteTuristico = new ArrayObject(); // Crear una instancia de ArrayObject para cada paquete turístico
+    
+                $paqueteTuristico->offsetSet('nombre', $row['nombre']);
+                $paqueteTuristico->offsetSet('direccion', $row['direccion']);
+                $paqueteTuristico->offsetSet('duracion', $row['duracion']);
+                $paqueteTuristico->offsetSet('preciototal', $row['preciototal']);
+                $paqueteTuristico->offsetSet('imagen', $row['imagen']);
+                $paqueteTuristico->offsetSet('servicio', $row['servicio']);
+                $paqueteTuristico->offsetSet('proveedor', $row['proveedor']);
+    
+                $paquetesTuristicos->append($paqueteTuristico); // Agregar el objeto al ArrayObject
+            }
+        }
+    
+        $stmt->close();
+        return $paquetesTuristicos;
+    }
+    
+    
 }
