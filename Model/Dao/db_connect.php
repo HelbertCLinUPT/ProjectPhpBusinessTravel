@@ -1,8 +1,8 @@
 <?php
 // Database credentials
-$servername = "localhost";
-$username = "root";
-$password = "";
+$servername = "helbert.info";
+$username = "helbert";
+$password = "helbert123";
 $dbname = "proyectophp";
 
 // Create a database connection

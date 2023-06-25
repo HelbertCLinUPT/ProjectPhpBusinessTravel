@@ -26,7 +26,7 @@
                     xl:text-bold">Recupear Cuenta</h2>
                 <div class="mt-12">
 
-                    <form action="MainController.php?action=login-recuperarcuenta" method="post">
+                    <form action="MainController.php?action=login-recuperar" method="post">
                         <div>
                             <div class="text-sm font-bold text-gray-700 tracking-wide">Email</div>
                             <input class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" name="correo" type="text" placeholder="example@gmail.com" required>
