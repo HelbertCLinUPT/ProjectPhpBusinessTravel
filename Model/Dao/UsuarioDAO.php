@@ -37,7 +37,7 @@ class UsuarioDAO implements UsuarioDAOInterface{
         $apellido = $usuario->getApellido();
         $numeroCelular = $usuario->getNumeroCelular();
         $rol = $usuario->getRol();
-        $password = $usuario->getPassword();
+        $password = password_hash($usuario->getPassword(), PASSWORD_DEFAULT);
         $email=$usuario->getEmail();
 
         $query = "INSERT INTO usuarios (nombre, apellido, numeroCelular, rol, password,email) VALUES ('$nombre', '$apellido', '$numeroCelular', '$rol','$password','$email')";
@@ -77,7 +77,7 @@ class UsuarioDAO implements UsuarioDAOInterface{
         $nombre = $usuario->getNombre();
         $apellido = $usuario->getApellido();
         $numeroCelular = $usuario->getNumeroCelular();
-        $password = $usuario->getPassword();
+        $password = password_hash($usuario->getPassword(), PASSWORD_DEFAULT);
         $rol = $usuario->getRol();
         $email = $usuario->getEmail();
 

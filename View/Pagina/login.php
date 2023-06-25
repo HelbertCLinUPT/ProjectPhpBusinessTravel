@@ -40,7 +40,7 @@
                             <input class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" name="Password" type="password" placeholder="Enter your password">
                         </div>
                         <div class="flex justify-end mt-3">
-                            <a class="text-xm font-display font-semibold text-indigo-600 hover:text-indigo-800 cursor-pointer">
+                            <a href="MainController.php?action=login-recuperar" class="text-xm font-display font-semibold text-indigo-600 hover:text-indigo-800 cursor-pointer">
                                 Forgot Password?
                             </a>
                         </div>

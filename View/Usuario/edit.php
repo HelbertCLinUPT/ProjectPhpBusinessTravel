@@ -51,7 +51,7 @@
                                             <div class="form-group row">
                                                 <label for="password" class="col-sm-3 col-form-label">password:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="password" value="<?php echo $usuario->getPassword(); ?>" required>
+                                                    <input type="text" class="form-control form-control-user" style="font-size: 18px;" name="password" placeholder="ingrese un nuevo password" required>
                                                 </div>
                                             </div>
                                 

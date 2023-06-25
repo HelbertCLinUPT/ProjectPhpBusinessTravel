@@ -90,15 +90,15 @@ switch ($action) {
         $servicioController->index();
         break;
     case 'servicio-add':
-        $proveedores = $proveedorController->listar(); 
+        $proveedores = $proveedorController->listar();
         $paqueteturisticos = $paqueteTuristicoController->listar();
         $result = $servicioController->add($proveedores, $paqueteturisticos);
         break;
 
     case 'servicio-edit':
-        $proveedores = $proveedorController->listar(); 
+        $proveedores = $proveedorController->listar();
         $paqueteturisticos = $paqueteTuristicoController->listar();
-        $result = $servicioController->edit($id,$proveedores, $paqueteturisticos);
+        $result = $servicioController->edit($id, $proveedores, $paqueteturisticos);
         break;
     case 'servicio-delete':
         $servicioController->delete($id);
@@ -127,6 +127,10 @@ switch ($action) {
     case 'login-ingresar':
         $loginController->ingresar();
         break;
+    case 'login-recuperar':
+        $loginController->RecuperarCuenta();
+        break;
+
     case 'login-register':
         $loginController->registrarse();
         break;
