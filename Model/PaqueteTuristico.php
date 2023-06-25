@@ -1,5 +1,4 @@
 <?php
-
 class PaqueteTuristico
 {
     private $id;
@@ -7,16 +6,23 @@ class PaqueteTuristico
     private $direccion;
     private $duracion;
     private $imagen;
-    private $precitototal;
+    private $preciototal;
+    private $servicios; // Cambiado el nombre del atributo
+    private $proveedor; // Nuevo atributo
 
+    public function __construct()
+    {
+        $this->servicios = array(); // Inicializar el array de servicios
+    }
 
     public function getId()
     {
         return $this->id;
     }
+
     public function setId($id)
     {
-        $this->id=$id;
+        $this->id = $id;
     }
 
     public function getNombre()
@@ -48,7 +54,7 @@ class PaqueteTuristico
     {
         $this->duracion = $duracion;
     }
-    
+
     public function getImagen()
     {
         return $this->imagen;
@@ -61,12 +67,31 @@ class PaqueteTuristico
 
     public function getPrecioTotal()
     {
-        return $this->precitototal;
+        return $this->preciototal;
     }
 
-    public function setPrecioTotal($precitototal)
+    public function setPrecioTotal($preciototal)
     {
-        $this->precitototal = $precitototal;
+        $this->preciototal = $preciototal;
     }
 
+    public function getServicios()
+    {
+        return $this->servicios;
+    }
+
+    public function setServicios($servicios)
+    {
+        $this->servicios = $servicios;
+    }
+
+    public function getProveedor()
+    {
+        return $this->proveedor;
+    }
+
+    public function setProveedor($proveedor)
+    {
+        $this->proveedor = $proveedor;
+    }
 }

@@ -12,5 +12,7 @@ interface PaqueteTuristicoDaoInterface {
     public function updatePaqueteTuristico(PaqueteTuristico $paquete);
 
     public function deletePaqueteTuristico($id);
+
+    public function listarServicios($id);
 }
 ?>
