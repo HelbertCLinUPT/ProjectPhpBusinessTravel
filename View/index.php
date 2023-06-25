@@ -61,17 +61,21 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                             Ganancia (Mensual)</div>
-                                                <?php
+                                            <?php
                                                 $acumulado = 0;
                                                 $mesActual = date('m');
+                                                $anoActual = date('Y');
+                                               
 
                                                 foreach ($pedidos as $pedido) {
                                                     $mesPedido = date('m', strtotime($pedido->getFechaSolicitud()));
-                                                    if ($mesPedido === $mesActual) {
+                                                    $anoPedido = date('Y', strtotime($pedido->getFechaSolicitud()));
+                                                     
+                                                    if ($mesPedido === $mesActual && $anoPedido === $anoActual) {
                                                         $acumulado += $pedido->getCosto();
                                                     }
                                                 }
-                                                ?>
+                                            ?>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo'$.',$acumulado?></div>
                                         </div>
                                         <div class="col-auto">
