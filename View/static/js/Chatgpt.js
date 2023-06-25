@@ -21,7 +21,7 @@ $(document).ready(function () {
   
       $.ajax({
         type: "POST",
-        url: "http://api2.erick.wtf:8888/openai",
+        url: "https://api2.erick.wtf/openai",
         data: JSON.stringify(data),
         contentType: "application/json",
         success: function (response) {
