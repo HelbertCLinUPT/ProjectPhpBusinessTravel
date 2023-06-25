@@ -159,7 +159,8 @@ switch ($action) {
         break;
         // Admin
     case 'admin-index':
-        include("View/index.php");
+        //include("View/index.php");
+        $PedidoController->indexstadistic();
         break;
     default:
         header("location:index.php");
