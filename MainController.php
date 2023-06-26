@@ -70,6 +70,12 @@ switch ($action) {
     case 'paquete-delete':
         $paqueteTuristicoController->delete($id);
         break;
+    case 'paquete-disenar':
+        include("View/PaqueteTuristico/diseñar.php");
+        break;
+    case 'paquete-disenar-img':
+        include("View/PaqueteTuristico/disenar-img.php");
+        break;
 
         // ReservaInteresado-related actions
     case 'interesado-index':
@@ -117,12 +123,7 @@ switch ($action) {
     case 'proveedor-delete':
         $proveedorController->delete($id);
         break;
-    case 'paquete-disenar':
-        include("View/PaqueteTuristico/diseñar.php");
-        break;
-    case 'paquete-disenar-img':
-        include("View/PaqueteTuristico/disenar-img.php");
-        break;
+
         // Login
     case 'login-user':
         $loginController->index();
