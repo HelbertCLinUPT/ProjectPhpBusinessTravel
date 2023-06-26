@@ -11,15 +11,17 @@
     <link href="View/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="View/static/css/sb-admin-2.min.css" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 
-    <script src="View/Static/js/Chatgpt.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="View/static/js/Chatgpt.js"></script>
+
     <style>
         .hidden {
             display: none;
         }
     </style>
+
 </head>
 
 <body id="page-top">
@@ -50,7 +52,6 @@
                                                     <button id="buscar-btn" class="inline-flex items-center justify-center bg-blue-700 hover:bg-blue-600 rounded-xl text-white px-4 py-2 flex-shrink-0 w-auto h-auto">
                                                         <span class="w-6 h-7 flex items-center justify-center">
                                                             <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512">
-                                                                <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                                                 <path style="fill: #ffffff;" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
                                                             </svg>
                                                         </span>
@@ -61,6 +62,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+
                                         </div>
                                         <p id="mensaje-error" class="text-red-500 hidden">Por favor, ingresa una consulta válida.</p>
 
@@ -72,7 +74,6 @@
                                                 </div>
                                                 <div class="w-1/5">
                                                     <div class="rounded-xl bg-white py-3 px-3">
-                                                        <button class="bg-orange-500 hover:bg-orange-700 text-white w-full py-2 px-4 mb-2 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50">Guardar</button>
                                                         <button onclick="descargarComoPDF()" class="bg-gray-600 hover:bg-gray-700 text-white w-full py-2 px-4 mb-2 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50">Descargar</button>
                                                         <a style="text-decoration: none;" href="MainController.php?action=paquete-disenar-img">
                                                             <button class="bg-cyan-600 hover:bg-Cyan-700 text-white w-full py-2 px-4 mt-8 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-Cyan-500 focus:ring-opacity-50 flex items-center justify-center">
@@ -85,17 +86,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="flex flex-col mt-4">
-                                            <div class="text-center mb-4">
-                                                <h1 class="text-xl font-bold">Imágenes relacionadas</h1>
-                                            </div>
-                                            <div class="flex flex-row">
-                                                <div class="w-full">
-                                                    <div class="rounded-xl bg-white py-3 px-3 flex flex-row flex-wrap gap-2 justify-center" id="image-container">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -124,7 +115,7 @@
     <script>
         window.jsPDF = window.jspdf.jsPDF;
     </script>
-    <script type="text/javascript" src="View/Static/js/descargarpdf.js"></script>
+    <script type="text/javascript" src="View/static/js/descargarpdf.js"></script>
 </body>
 
 </html>

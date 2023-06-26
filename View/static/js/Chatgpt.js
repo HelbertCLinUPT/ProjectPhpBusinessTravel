@@ -1,4 +1,11 @@
 $(document).ready(function () {
+
+  var savedContent = localStorage.getItem('resultado-consulta');
+
+  if (savedContent) {
+    $('#resultado-consulta').html(savedContent);
+  }
+
     $('#buscar-btn').click(function () {
       var consulta = $('input[name="consulta"]').val();
 
@@ -25,10 +32,12 @@ $(document).ready(function () {
         data: JSON.stringify(data),
         contentType: "application/json",
         success: function (response) {
-          console.log(response); // Imprimir la respuesta en la consola
+      
           if (response.content) {
             var formattedContent = response.content.replace(/\n/g, "<br>");
             $('#resultado-consulta').html(formattedContent);
+            localStorage.setItem('resultado-consulta', formattedContent);
+
           } else {
             console.error("No se encontró respuesta válida");
           }
