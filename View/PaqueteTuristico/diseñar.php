@@ -75,12 +75,12 @@
 
                                                 <div class="w-3/12">
                                                     <div class="rounded-xl bg-white py-3 px-3">
+
+                                                        <button  onclick="borrarConversacion()" class="bg-red-600 hover:bg-red-700 text-white w-full py-2 px-4 mb-2 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50">Borrar Conversacion</button>
+
                                                         
-<button onclick="borrarConversacion()" class="bg-red-600 hover:bg-red-700 text-white w-full py-2 px-4 mb-2 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50">Borrar Conversacion</button>
 
-<!--
-
-                                                        <button onclick="descargarComoPDF()" class="bg-gray-600 hover:bg-gray-700 text-white w-full py-2 px-4 mb-2 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50">Descargar PDF</button>
+                                                        <button id="ButtonDownload" onclick="descargarComoPDF()" class="hidden bg-gray-600 hover:bg-gray-700 text-white w-full py-2 px-4 mb-2 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50">Descargar PDF</button>
 
 
 
@@ -96,7 +96,6 @@
                                                             <button class=" bg-blue-600 hover:bg-blue-700 text-white w-full py-2 px-4 mb-2 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50">Imagenes</button>
                                                         </a>
                                                         
-                                                        --!>
                                                     </div>
                                                 </div>
                                             </div>
@@ -126,21 +125,21 @@ function borrarConversacion() {
 }
 </script>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="View/static/vendor/jquery/jquery.min.js"></script>
-    <script src="View/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+                                                        <script src="View/static/vendor/jquery/jquery.min.js"></script>
+                                                        <script src="View/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="View/static/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="View/static/js/delete-proveedor.js"></script>
+                                                        <!-- Core plugin JavaScript-->
+                                                        <script src="View/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+                                                        <script src="View/static/js/delete-proveedor.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="View/static/js/sb-admin-2.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script>
-        window.jsPDF = window.jspdf.jsPDF;
-    </script>
-    <script type="text/javascript" src="View/static/js/descargarpdf.js"></script>
+                                                        <!-- Custom scripts for all pages-->
+                                                        <script src="View/static/js/sb-admin-2.min.js"></script>
+                                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+                                                        <script>
+                                                            window.jsPDF = window.jspdf.jsPDF;
+                                                        </script>
+                                                        <script type="text/javascript" src="View/static/js/descargarpdf.js"></script>
 </body>
 
 </html>

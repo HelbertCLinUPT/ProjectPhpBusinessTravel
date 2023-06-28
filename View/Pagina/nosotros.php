@@ -72,7 +72,7 @@
 
 <section class="nosotros">
   <div class="container">
-    <div class="row">
+    <div style="margin-left: 50px;"  class="row">
       <div class="col-md-6">
         <img src="View/Pagina/img/banner/nosotros.jpg" alt="Imagen Business Travel">
         
