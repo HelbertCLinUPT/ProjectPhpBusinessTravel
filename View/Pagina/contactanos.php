@@ -24,7 +24,7 @@
       <div class="row ">
         <div class="col-lg-6 mb-4 mb-lg-0">
           <div style="width: 100%; height: 400px;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.5914532658883!2d-70.27091918553322!3d-18.010476787388758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92314c0d5de640dd%3A0x8e238c6f8c53f150!2s1499%2C%20Alto%20De%20Lima%2C%20Tacna!5e0!3m2!1sen!2sca!4v1654314320116!5m2!1sen!2sca" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d948.6018734471553!2d-70.24104343320464!3d-18.00628275798766!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915acf7d89d5cce7%3A0x38878887846c5dc0!2sBusiness%20Travel%20Agencia%20De%20Viaies!5e0!3m2!1sen!2sca!4v1687966863548!5m2!1sen!2sca" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
           </div>
         </div>
         <div class="col-lg-6">
