@@ -59,7 +59,17 @@
 
                                             // Agregar opción al select
                                             ?>
-                                            <option value="<?php echo $rol; ?>"><?php echo $rol; ?></option>
+                                            <option value="<?php echo $rol; ?>"><?php 
+                                            if($rol==1)
+                                              echo "Usuario";
+                                            if($rol==2)
+                                              echo "Admin";
+                                            if($rol==3)
+                                              echo "Interesado";
+                                            else                                            
+                                            echo $rol;
+                                            
+                                             ?></option>
                                             <?php
                                         }
                                     }

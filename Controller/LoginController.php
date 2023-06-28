@@ -105,6 +105,12 @@ class LoginController
     public function salir()
     {
         session_destroy();
+        ?>
+        <script>
+          localStorage.setItem('resultado-consulta', '');
+          localStorage.setItem('resultado-mensajes', '');
+        </script>
+        <?php
         include 'View/Pagina/login.php';
     }
 }
