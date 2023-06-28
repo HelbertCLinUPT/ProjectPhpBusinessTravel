@@ -13,7 +13,7 @@
     <link href="View/static/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="https://unpkg.com/tailwindcss@1.9.6/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script>
+
     <style>
         .hidden {
             display: none;
@@ -35,8 +35,12 @@
                     <h1 class="h3 mb-2 text-gray-800">Nueva Imagen</h1>
                     <div class="card shadow">
                         <div class="flex flex-col flex-auto flex-shrink-0 h-full p-4">
-
                             <div class="flex flex-row items-center rounded-xl px-4 py-4">
+                                <div class="flex-grow ml-4">
+                                    <div class="relative w-full">
+                                        <input type="text" class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10" name="consulta" placeholder="Ingrese una palabra, puede ser un país o lugar" />
+                                    </div>
+                                </div>
                                 <div class="ml-2">
                                     <select name="forma" class="rounded-xl border h-10 pl-2 pr-8 py-1 focus:outline-none focus:border-indigo-300">
                                         <option selected value="landscape">
@@ -50,12 +54,6 @@
                                         </option>
                                     </select>
                                 </div>
-                                <div class="flex-grow ml-4">
-                                    <div class="relative w-full">
-                                        <input type="text" class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10" name="consulta" placeholder="Ingrese una palabra, puede ser un país o lugar" />
-                                    </div>
-                                </div>
-
                                 <div class="ml-2">
                                     <div id="disenar-container" class="relative">
                                         <button id="disenar-btn" class="inline-flex items-center justify-center bg-blue-700 hover:bg-indigo-600 rounded-xl text-white px-4 py-2 flex-shrink-0 w-auto min-w-[6rem] h-auto  min-h-[3rem]">

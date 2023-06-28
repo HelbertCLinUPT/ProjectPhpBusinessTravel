@@ -77,9 +77,7 @@ switch ($action) {
     case 'paquete-disenar-img':
         include("View/PaqueteTuristico/disenar-img.php");
         break;
-    case 'paquete-listar-img':
-        include("View/PaqueteTuristico/listarimg.php");
-        break;
+
         // ReservaInteresado-related actions
     case 'interesado-index':
         $reservaInteresadoController->index();
