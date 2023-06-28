@@ -13,6 +13,9 @@ class PedidoController {
         $pedidos = $this->pedidoDAO->getAllPedido();
         include 'View/Pedido/index.php';
     }
+    
+    
+
 
     public function add() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {

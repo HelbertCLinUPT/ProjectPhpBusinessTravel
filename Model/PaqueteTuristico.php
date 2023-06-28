@@ -10,11 +10,7 @@ class PaqueteTuristico
     private $servicios; // Cambiado el nombre del atributo
     private $proveedor; // Nuevo atributo
 
-    public function __construct()
-    {
-        $this->servicios = array(); // Inicializar el array de servicios
-    }
-
+   
     public function getId()
     {
         return $this->id;

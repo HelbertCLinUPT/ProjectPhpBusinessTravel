@@ -128,7 +128,7 @@ class PaqueteTuristicoController
             $imagen = $paqueteTuristico->offsetGet('imagen');
             include 'View/Pagina/detalle.php';
         } else {
-            echo 'PaqueteTuristico not found.';
+            include("View/Pagina/detalle_error.php");
         }
     }
 }
