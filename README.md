@@ -17,7 +17,6 @@ Asegúrate de tener instalados los siguientes programas:
 1. Clona este repositorio en tu máquina local:
    ```
    git clone -b BusinessIa https://github.com/HelbertCLinUPT/ProjectPhpBusinessTravel.git
-
    ```
 
 2. Navega hasta la carpeta del proyecto:
