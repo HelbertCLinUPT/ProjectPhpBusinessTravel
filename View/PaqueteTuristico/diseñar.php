@@ -75,17 +75,10 @@
 
                                                 <div class="w-3/12">
                                                     <div class="rounded-xl bg-white py-3 px-3">
-                                                        <h4>Rol del bot:</h4>
+                                                        
+<button onclick="borrarConversacion()" class="bg-red-600 hover:bg-red-700 text-white w-full py-2 px-4 mb-2 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50">Borrar Conversacion</button>
 
-                                                        <select id="opciones-select" class="w-full bg-white border border-gray-300 rounded-md px-3 py-2 outline-none mb-2">
-                                                            <option value="Asistente de Viajes">Asistente de Viajes</option>
-                                                            <option value="Asesor Financiero">Asesor Financiero</option>
-                                                            <option value="">Personalizado</option>
-                                                        </select>
-
-
-                                                        <input id="rolBot" type="text" value="Asistente de Viajes" class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10 mb-2" name="rol" placeholder="Rol Bot" readonly>
-
+<!--
 
                                                         <button onclick="descargarComoPDF()" class="bg-gray-600 hover:bg-gray-700 text-white w-full py-2 px-4 mb-2 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50">Descargar PDF</button>
 
@@ -102,6 +95,8 @@
                                                         <a href="MainController.php?action=paquete-listar-img">
                                                             <button class=" bg-blue-600 hover:bg-blue-700 text-white w-full py-2 px-4 mb-2 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50">Imagenes</button>
                                                         </a>
+                                                        
+                                                        --!>
                                                     </div>
                                                 </div>
                                             </div>
@@ -121,20 +116,15 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <script>
-        document.getElementById('opciones-select').addEventListener('change', function() {
-            var selectedOption = this.value;
-            var textbox = document.getElementById('rolBot');
-            if (selectedOption === '') {
-                textbox.removeAttribute('readonly');
-            } else {
-                textbox.setAttribute('readonly', 'readonly');
-            }
-            textbox.value = selectedOption;
-        });
-    </script>
+   
 
-
+<script>
+function borrarConversacion() {
+  localStorage.setItem('resultado-consulta', '');
+  localStorage.setItem('resultado-mensajes', '');
+  location.reload();
+}
+</script>
 
     <!-- Bootstrap core JavaScript-->
     <script src="View/static/vendor/jquery/jquery.min.js"></script>
