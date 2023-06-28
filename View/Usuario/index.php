@@ -43,6 +43,29 @@
                             <h6 class="m-0 font-weight-bold text-primary">Usuarios</h6>
                         </div>
                         <div class="card-body">
+                            <div class="form-group">
+                                <label for="rol">Filtrar por rol:</label>
+                                <select class="form-control" id="rol">
+                                    <option value="">Todos</option>
+                                    <?php
+                                    $rolesAgregados = []; // Arreglo auxiliar para realizar un seguimiento de los roles agregados
+
+                                    foreach ($usuarios as $usuario) {
+                                        $rol = $usuario->getRol();
+
+                                        // Verificar si el rol ya ha sido agregado al arreglo auxiliar
+                                        if (!in_array($rol, $rolesAgregados)) {
+                                            $rolesAgregados[] = $rol; // Agregar el rol al arreglo auxiliar
+
+                                            // Agregar opción al select
+                                            ?>
+                                            <option value="<?php echo $rol; ?>"><?php echo $rol; ?></option>
+                                            <?php
+                                        }
+                                    }
+                                    ?>
+                                </select>
+                            </div>
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
@@ -58,7 +81,7 @@
                                     </thead>
                                     <tbody>
                                         <?php foreach ($usuarios as $usuario) : ?>
-                                            <tr>
+                                            <tr data-rol="<?php echo $usuario->getRol(); ?>">
                                                 <td><?php echo $usuario->getId(); ?></td>
                                                 <td><?php echo $usuario->getNombre(); ?></td>
                                                 <td><?php echo $usuario->getApellido(); ?></td>
@@ -101,6 +124,20 @@
 
     <!-- Custom scripts for all pages-->
     <script src="View/static/js/sb-admin-2.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#rol').change(function() {
+                var selectedRol = $(this).val();
+                if (selectedRol) {
+                    $('#dataTable tbody tr').hide();
+                    $('#dataTable tbody tr[data-rol="' + selectedRol + '"]').show();
+                } else {
+                    $('#dataTable tbody tr').show();
+                }
+            });
+        });
+    </script>
 
 </body>
 

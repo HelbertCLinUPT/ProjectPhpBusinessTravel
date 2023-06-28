@@ -43,6 +43,24 @@
                             <h6 class="m-0 font-weight-bold text-primary">Interesados en Reservas</h6>
                         </div>
                         <div class="card-body">
+                            <div class="form-group">
+                                <label for="paquete">Filtrar por paquete turístico:</label>
+                                <select class="form-control" id="paquete">
+                                    <option value="">Todos</option>
+                                    <?php
+                                    $paquetesAgregados = []; 
+                                    foreach ($reservainteresados as $paquete) {
+                                        $nombrePaquete = $paquete->getFkIdServicio();
+                                        if (!in_array($nombrePaquete, $paquetesAgregados)) {
+                                            $paquetesAgregados[] = $nombrePaquete; 
+                                            ?>
+                                            <option value="<?php echo $paquete->getFkIdServicio(); ?>"><?php echo $nombrePaquete; ?></option>
+                                            <?php
+                                        }
+                                    }
+                                    ?>
+                                </select>
+                            </div>
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
@@ -57,7 +75,7 @@
                                     </thead>
                                     <tbody>
                                         <?php foreach ($reservainteresados as $reservainteresado) : ?>
-                                            <tr>
+                                            <tr data-paquete="<?php echo $reservainteresado->getFkIdServicio(); ?>">
                                                 <td><?php echo $reservainteresado->getId(); ?></td>
                                                 <td><?php echo $reservainteresado->getNombre(); ?></td>
                                                 <td><?php echo $reservainteresado->getPrecioTotal(); ?></td>
@@ -98,6 +116,20 @@
 
     <!-- Custom scripts for all pages-->
     <script src="View/static/js/sb-admin-2.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#paquete').change(function() {
+                var selectedPaquete = $(this).val();
+                if (selectedPaquete) {
+                    $('#dataTable tbody tr').hide();
+                    $('#dataTable tbody tr[data-paquete="' + selectedPaquete + '"]').show();
+                } else {
+                    $('#dataTable tbody tr').show();
+                }
+            });
+        });
+    </script>
 
 </body>
 
