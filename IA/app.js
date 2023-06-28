@@ -26,18 +26,20 @@ const defaultRequestBody = {
       role: "system",
       content: "Eres un asistente de viajes.",
     },
-    {
-      role: "user",
-      content: "{valor}",
-    },
   ],
 };
 
 app.post("/openai", async (req, res) => {
   try {
-    const { content } = req.body;
+    const { content, messages } = req.body;
 
-    const requestBody = JSON.parse(JSON.stringify(defaultRequestBody).replace(/{valor}/g, content));
+    const requestBody = JSON.parse(JSON.stringify(defaultRequestBody));
+    
+    if (messages && Array.isArray(messages)) {
+      requestBody.messages.push(...messages);
+    }
+    
+    requestBody.messages.push({ role: "user", content });
 
     const completion = await openai.createChatCompletion(requestBody);
 
