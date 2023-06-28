@@ -31,7 +31,6 @@
 <section class="section-margin" style="margin-bottom: 410px;">
   <div class="container">
     <div class="section-intro text-center pb-80px">
-      <!-- Contenido opcional para la sección intro -->
     </div>
     <div class="row">
       <div class="col-md-6">

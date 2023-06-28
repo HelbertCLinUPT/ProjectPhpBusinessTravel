@@ -7,8 +7,8 @@ class PaqueteTuristico
     private $duracion;
     private $imagen;
     private $preciototal;
-    private $servicios; // Cambiado el nombre del atributo
-    private $proveedor; // Nuevo atributo
+    private $servicios;
+    private $proveedor; 
 
    
     public function getId()

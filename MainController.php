@@ -172,8 +172,16 @@ switch ($action) {
 
     case 'page-pedido-add':
         $PedidoController->userAdd();
+        
+        if (isset($_GET['send-email']) && $_GET['send-email'] == 'true') {
+            if ($PedidoController->EnvioPedido()) {
+                error_log('¡Correo enviado con éxito!');
+            } else {
+                error_log('Error al enviar el correo.');
+            }
+        }
         break;
-
+        
         // Admin
     case 'admin-index':
         //include("View/index.php");

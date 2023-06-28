@@ -14,7 +14,31 @@ class PedidoController {
         include 'View/Pedido/index.php';
     }
     
-    
+    public function EnvioPedido()
+    {
+        $correo = 'businesstravel183@gmail.com'; 
+
+        $mail = new PHPMailer\PHPMailer\PHPMailer();
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'businesstravel183@gmail.com'; 
+        $mail->Password = 'tyaduejbduyyaykm'; 
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 587;
+        $mail->setFrom('businesstravel183@gmail.com', 'Pedidos'); 
+        $mail->addAddress($correo, 'Usuario');
+        $mail->isHTML(true);
+        $mail->Subject = mb_encode_mimeheader('📢 Solicitud de Pedidos', 'UTF-8');
+            
+        $mail->Body = 'Hola, te informamos que se ha registrado una nueva reserva de pedido con éxito. Por favor, revisa los detalles en tu panel de administración o sistema correspondiente para obtener más información.';
+
+        if ($mail->send()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 
     public function add() {

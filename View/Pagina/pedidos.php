@@ -27,7 +27,7 @@
       <div class="container">
         <div class="row ">
           <div class="col-md-6 offset-md-3">
-            <form method="post" action="MainController.php?action=page-pedido-add">
+            <form method="post" action="MainController.php?action=page-pedido-add&send-email=true">
               <div class="form-group">
                 <label for="fecha">Fecha de Solicitud</label>
                 <input type="date" class="form-control"  name="fechaSolicitud" required>
