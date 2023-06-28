@@ -21,7 +21,7 @@ Asegúrate de tener instalados los siguientes programas:
 
 2. Navega hasta la carpeta del proyecto:
    ```
-   cd ProjectPhpBusinessTravel
+   cd ProjectPhpBusinessTravel/Ia
    ```
 
 3. Instala las dependencias del proyecto utilizando npm:
