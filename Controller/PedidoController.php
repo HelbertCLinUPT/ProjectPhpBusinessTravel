@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Model/Dao/PedidoDao.php';
+require_once 'Model/Dao/PedidoDAO.php';
 
 class PedidoController {
     private $pedidoDAO;
@@ -38,6 +38,32 @@ class PedidoController {
             include 'View/Pedido/add.php';
         }
     }
+
+    public function userAdd() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $fechaSolicitud = $_POST['fechaSolicitud'];
+            $destino = $_POST['destino'];
+            $fkIdUsuario = $_POST['id'];
+
+            $pedido = new Pedido();
+
+            $pedido->setFechaSolicitud($fechaSolicitud);
+            $pedido->setFechaDestino('2020-01-01');
+            $pedido->setCosto(0);
+            $pedido->setDestino($destino);
+            $pedido->setFkIdUsuario($fkIdUsuario);
+
+            if ($this->pedidoDAO->addPedido($pedido)) {
+                                
+                header('Location: MainController.php?action=page-index');
+            } else {
+                echo 'Error adding the pedido.';
+            }
+        } else {
+            include 'View/Pedido/add.php';
+        }
+    }
+
 
     public function edit($id) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {

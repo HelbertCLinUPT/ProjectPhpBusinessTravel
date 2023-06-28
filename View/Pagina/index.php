@@ -119,11 +119,21 @@
       <div id="card-container" class="row"></div>
 
   </section>
+  
   <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-  <df-messenger chat-icon="https:&#x2F;&#x2F;encrypted-tbn0.gstatic.com&#x2F;images?q=tbn:ANd9GcSfh5kDV55gRWX1BkTRE-4ebyditNq2kd1Izw&ampusqp=CAU" chat-title="businesstravelagency" agent-id="de6a8fd6-d0e8-4ff7-810e-2b5c4112a2f5" language-code="es"></df-messenger>
+<df-messenger
+  chat-icon="https:&#x2F;&#x2F;encrypted-tbn0.gstatic.com&#x2F;images?q=tbn:ANd9GcSfh5kDV55gRWX1BkTRE-4ebyditNq2kd1Izw&ampusqp=CAU"
+  intent="WELCOME"
+  chat-title="businesstravelagency"
+  agent-id="de6a8fd6-d0e8-4ff7-810e-2b5c4112a2f5"
+  language-code="es"
+></df-messenger>
+
+  
   <?php
   include 'View/header/footerPagina.php';
   ?>
+
 </body>
 
 </html>

@@ -62,7 +62,7 @@
                     <h4 class="text-primary">$<?php echo $paquete->getPrecioTotal(); ?></h4>
                   </div>
                 </div>
-                <a href="#" onclick="mostrarDetalle(<?php echo $paquete->getId(); ?>)">Ver detalle</a>
+                <a href="MainController.php?action=paquete-detalle&id=<?php echo $paquete->getId(); ?>">Ver detalle</a>
               </div>
             </div>
           </div>
@@ -70,12 +70,6 @@
       </div>
     </div>
   </section>
-  <script>
-    function mostrarDetalle(idProducto) {
-      // Redirigir al MainController para mostrar los detalles del paquete turístico
-      window.location.href = "MainController.php?action=paquete-detalle&id=" + idProducto;
-    }
-  </script>
 
   <?php
   include 'View/header/footerPagina.php';

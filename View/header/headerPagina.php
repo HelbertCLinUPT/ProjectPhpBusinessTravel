@@ -4,8 +4,12 @@
   <div class="main_menu">
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container box_1620">
-        <a class="navbar-brand logo_h" href="MainController.php?action=main-index"><img height="91px" src="img/LogoEmpresa.png" alt=""><b>
-            Business Travel</b></a>
+
+        <a class="navbar-brand logo_h" href="MainController.php?action=main-index">
+          <img height="91px" src="View/Pagina/img/LogoEmpresa.png" alt="">
+          
+          <b>Business Travel</b>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -19,6 +23,14 @@
             <li class="nav-item"><a class="nav-link" href="MainController.php?action=page-paquetes">Paquetes</a></li>
             <li class="nav-item"><a class="nav-link" href="MainController.php?action=page-ofertas">Ofertas</a></li>
             <li class="nav-item"><a class="nav-link" href="MainController.php?action=page-contactanos">Contactanos</a></li>
+            <?php 
+            if(isset($_SESSION['rol'])){
+            ?>
+            <li class="nav-item"><a class="nav-link" href="MainController.php?action=page-pedido">Pedido</a></li>
+            <?php 
+            }
+            ?>
+          
           </ul>
 
           <?php

@@ -1,6 +1,14 @@
 $(document).ready(function () {
+
+  var savedContent = localStorage.getItem('resultado-consulta');
+
+  if (savedContent) {
+    $('#resultado-consulta').html(savedContent);
+  }
+
     $('#buscar-btn').click(function () {
       var consulta = $('input[name="consulta"]').val();
+      var rol = $('input[name="rol"]').val();
 
       if (consulta.trim() === '') {
         $('#mensaje-error').removeClass('hidden');
@@ -9,6 +17,7 @@ $(document).ready(function () {
       $('#mensaje-error').addClass('hidden');
 
       var data =   {
+        "role": rol,
         "content": consulta
       };
       console.log(data);
@@ -21,14 +30,16 @@ $(document).ready(function () {
   
       $.ajax({
         type: "POST",
-        url: "http://api2.erick.wtf:8888/openai",
+        url: "https://gpt.helbert.info/openai",
         data: JSON.stringify(data),
         contentType: "application/json",
         success: function (response) {
-          console.log(response); // Imprimir la respuesta en la consola
+      
           if (response.content) {
             var formattedContent = response.content.replace(/\n/g, "<br>");
             $('#resultado-consulta').html(formattedContent);
+            localStorage.setItem('resultado-consulta', formattedContent);
+
           } else {
             console.error("No se encontró respuesta válida");
           }

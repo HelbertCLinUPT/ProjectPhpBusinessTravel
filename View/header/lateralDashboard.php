@@ -38,13 +38,9 @@
     </li>
     <hr class="sidebar-divider">
     <div class="sidebar-heading">
-        Addons
+        Diseño
     </div>
-    <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Graficos</span></a>
-    </li>
+    
     <li class="nav-item">
         <a class="nav-link" href="MainController.php?action=paquete-disenar">
             <i class="fas fa-fw fa-table"></i>

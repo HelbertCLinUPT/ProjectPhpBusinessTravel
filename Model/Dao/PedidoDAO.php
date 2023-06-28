@@ -2,7 +2,7 @@
 
 require_once 'db_connect.php';
 require_once 'Model/Pedido.php';
-require_once 'PedidoDaoInterface.php';
+require_once 'PedidoDAOInterface.php';
 
 class PedidoDao implements PedidoDaoInterface {
     public function getAllPedido() {

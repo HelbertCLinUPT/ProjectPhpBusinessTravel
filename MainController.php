@@ -64,6 +64,7 @@ switch ($action) {
     case 'paquete-add':
         $paqueteTuristicoController->add();
         break;
+
     case 'paquete-edit':
         $paqueteTuristicoController->edit($id);
         break;
@@ -164,6 +165,15 @@ switch ($action) {
     case 'paquete-detalle':
         $paqueteTuristicoController->detalle($id);
         break;
+
+    case 'page-pedido':
+        include("View/Pagina/pedidos.php");
+        break;
+
+    case 'page-pedido-add':
+        $PedidoController->userAdd();
+        break;
+
         // Admin
     case 'admin-index':
         //include("View/index.php");
