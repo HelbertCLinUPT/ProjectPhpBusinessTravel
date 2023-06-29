@@ -34,11 +34,10 @@
                 <div class="container">
                     <h1 class="h3 mb-2 text-gray-800">Nueva Imagen</h1>
                     <div class="card shadow">
-                        <div class="flex flex-col flex-auto flex-shrink-0 h-full p-4">
-
-                            <div class="flex flex-row items-center rounded-xl px-4 py-4">
-                                <div class="ml-2">
-                                    <select name="forma" class="rounded-xl border h-10 pl-2 pr-8 py-1 focus:outline-none focus:border-indigo-300">
+                        <div class="flex flex-col flex-auto h-full p-3">
+                            <div class="flex flex-row flex-wrap items-center rounded-xl px-4 py-2">
+                                <div class="float-left w-full sm:w-auto">
+                                    <select name="forma" class=" mt-2 rounded-xl border h-10 pl-2 pr-8 py-1 focus:outline-none focus:border-indigo-300">
                                         <option selected value="landscape">
                                             Horizontal
                                         </option>
@@ -50,34 +49,39 @@
                                         </option>
                                     </select>
                                 </div>
-                                <div class="flex-grow ml-4">
-                                    <div class="relative w-full">
-                                        <input type="text" class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10" name="consulta" placeholder="Ingrese una palabra, puede ser un país o lugar" />
+                                <div class="p-3 flex flex-col sm:flex-row">
+                                    <div class="flex items-center pl-3 mt-2">
+                                        <input type="checkbox" id="titulo-checkbox" value="" checked class="w-6 h-6 form-checkbox text-blue-600 bg-gray-100 border-gray-300 rounded">
+                                        <label for="titulo-checkbox" class="ml-2 h-4 text-lg no-underline cursor-pointer">Titulo</label>
+                                    </div>
+                                    <div class="flex items-center pl-3 mt-2">
+                                        <input type="checkbox" id="logo-checkbox" value="" checked class="w-6 h-6 form-checkbox text-blue-600 bg-gray-100 border-gray-300 rounded">
+                                        <label for="logo-checkbox" class="ml-2 h-4 text-lg no-underline cursor-pointer">Logo</label>
                                     </div>
                                 </div>
-
-                                <div class="ml-2">
-                                    <div id="disenar-container" class="relative">
-                                        <button id="disenar-btn" class="inline-flex items-center justify-center bg-blue-700 hover:bg-indigo-600 rounded-xl text-white px-4 py-2 flex-shrink-0 w-auto min-w-[6rem] h-auto  min-h-[3rem]">
-                                            <svg class="w-6 h-7 flex items-center justify-center" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="ml-2 bi bi-brush" viewBox="0 0 16 16">
-                                                <path d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.067 6.067 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.118 8.118 0 0 1-3.078.132 3.659 3.659 0 0 1-.562-.135 1.382 1.382 0 0 1-.466-.247.714.714 0 0 1-.204-.288.622.622 0 0 1 .004-.443c.095-.245.316-.38.461-.452.394-.197.625-.453.867-.826.095-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.201-.925 1.746-.896.126.007.243.025.348.048.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.176-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04zM4.705 11.912a1.23 1.23 0 0 0-.419-.1c-.246-.013-.573.05-.879.479-.197.275-.355.532-.5.777l-.105.177c-.106.181-.213.362-.32.528a3.39 3.39 0 0 1-.76.861c.69.112 1.736.111 2.657-.12.559-.139.843-.569.993-1.06a3.122 3.122 0 0 0 .126-.75l-.793-.792zm1.44.026c.12-.04.277-.1.458-.183a5.128 5.128 0 0 0 .73-.467l.263-.198a1.54 1.54 0 0 0 .392-.398c.12-.155.237-.315.364-.5l.178-.285c.17-.273.326-.562.502-.944a1.232 1.232 0 0 0-.618-.182l-1.91-.003z" />
-                                            </svg>
-                                            <span class="ml-2">Diseñar</span>
-                                        </button>
-
-                                        <div id="loading-indicator" class="absolute top-0 left-0 h-10 w-10 bg-blue bg-opacity-50 flex items-center justify-center rounded-xl hidden">
-                                            <div class="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-blue-900"></div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
+                                <div class="clearfix"></div>
                             </div>
-
-                            <p id="mensaje-error" class="text-red-500 hidden">Por favor, ingresa una
-                                consulta válida.</p>
-                            <p id="mensaje-no-found" class="text-orange-800 hidden">No se encontraron imagenes con esa orientacion</p>
-                            <div class="flex flex-col mt-4 ">
+                            <div class="flex-grow ml-4">
+                                <div class="relative w-full">
+                                    <input type="text" class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10" name="consulta" placeholder="Ingrese su busqueda, puede ser un país o lugar" />
+                                </div>
+                            </div>
+                            <div class="ml-4 mt-3">
+                                <div id="disenar-container" class="relative">
+                                    <button id="disenar-btn" class="inline-flex items-center justify-center bg-blue-700 hover:bg-indigo-600 rounded-xl text-white px-4 py-2 flex-shrink-0 min-w-[6rem] h-auto">
+                                        <svg class="w-6 h-7 flex items-center justify-center" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="ml-2 bi bi-brush" viewBox="0 0 16 16">
+                                            <path d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.067 6.067 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.118 8.118 0 0 1-3.078.132 3.659 3.659 0 0 1-.562-.135 1.382 1.382 0 0 1-.466-.247a.714.714 0 0 1-.204-.288.622.622 0 0 1 .004-.443c.095-.245.316-.38.461-.452.394-.197.625-.453.867-.826.095-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.201-.925 1.746-.896.126.007.243.025.348.048.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.176-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04zM4.705 11.912a1.23 1.23 0 0 0-.419-.1c-.246-.013-.573.05-.879.479-.197.275-.355.532-.5.777l-.105.177c-.106.181-.213.362-.32.528a3.39 3.39 0 0 1-.76.861c.69.112 1.736.111 2.657-.12.559-.139.843-.569.993-1.06a3.122 3.122 0 0 0 .126-.75l-.793-.792zm1.44.026c.12-.04.277-.1.458-.183a5.128 5.128 0 0 0 .73-.467l.263-.198a1.54 1.54 0 0 0 .392-.398c.12-.155.237-.315.364-.5l.178-.285c.17-.273.326-.562.502-.944a1.232 1.232 0 0 0-.618-.182l-1.91-.003z" />
+                                        </svg>
+                                        <span class="ml-2">Diseñar</span>
+                                    </button>
+                                    <div id="loading-indicator" class="absolute top-0 left-0 h-10 w-10 bg-blue bg-opacity-50 flex items-center justify-center rounded-xl hidden">
+                                        <div class="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-blue-900"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p id="mensaje-error" class="text-red-500 hidden">Por favor, ingresa una consulta válida.</p>
+                            <p id="mensaje-no-found" class="text-orange-800 hidden">No se encontraron imágenes con esa orientación</p>
+                            <div class="flex flex-col mt-4">
                                 <div class="text-center mb-4">
                                     <h1 id="results" class="text-xl font-bold hidden">Resultados</h1>
                                 </div>
@@ -86,6 +90,8 @@
                             </div>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </div>

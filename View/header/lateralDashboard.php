@@ -32,19 +32,22 @@
                 <h6 class="collapse-header">Personas:</h6>
                 <a class="collapse-item" href="MainController.php?action=usuario-index">Usuario</a>
                 <a class="collapse-item" href="MainController.php?action=proveedor-index">Proveedor</a>
-                
+
             </div>
         </div>
     </li>
     <hr class="sidebar-divider">
     <div class="sidebar-heading">
-        Diseño
+    Diseñar
     </div>
-    
+
     <li class="nav-item">
         <a class="nav-link" href="MainController.php?action=paquete-disenar">
             <i class="fas fa-fw fa-table"></i>
-            <span>Diseñar Paquetes</span></a>
+            <span>Generacion de paquetes</span></a>
+        <a class="nav-link" href="MainController.php?action=paquete-listar-img">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Explorar imagenes</span></a>
     </li>
     <hr class="sidebar-divider d-none d-md-block">
     <div class="text-center d-none d-md-inline">
