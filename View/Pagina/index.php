@@ -9,6 +9,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>INICIO</title>
   <link rel="icon" href="View/Pagina/img/Fevicon.png" type="image/png">
+
   <link rel="stylesheet" href="View/Pagina/vendors/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="View/Pagina/css/style.css">
   <script src="View/Pagina/js/facebookapi.js"></script>
