@@ -1,4 +1,4 @@
-fetch('https://imagen.erick.wtf/api/img')
+fetch('https://imagen.erickml.shop/api/img')
   .then(response => response.json())
   .then(data => {
     const imagesByCountry = data.data;

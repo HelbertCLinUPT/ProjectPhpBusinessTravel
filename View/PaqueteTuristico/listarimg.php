@@ -28,9 +28,9 @@
                 <div class="container">
                     <div class="container mx-auto px-4 py-8">
                         <h1 class="text-3xl font-bold mb-6 text-center">Listado de Imágenes</h1>
-                        <div class="flex flex-wrap items-center justify-between ">
+                        <div class="flex flex-wrap items-center justify-between">
                             <select id="country-select" class="p-2 text-lg rounded mt-2 md:mb-0"></select>
-                            <div class="float-left flex space-x-4 p-2 ">
+                            <div class="float-left flex space-x-4 p-2">
                                 <a style="text-decoration: none;" href="MainController.php?action=paquete-disenar-img">
                                     <button class="mt-6 bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 mb-2 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50 flex items-center justify-center">
                                         <span class="mr-2">New image</span>
@@ -39,17 +39,16 @@
                                         </svg>
                                     </button>
                                 </a>
-                                <a style="text-decoration: none;" href="MainController.php?action=paquete-disenar-img">
-                                    <button class="mt-6 bg-red-600 hover:bg-red-700 text-white py-2 px-4 mb-2 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 flex items-center justify-center">
-                                        <span class="mr-2">Eliminar</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
-                                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
-                                        </svg>
-                                    </button>
-                                </a>
+                                <button id="eliminar-btn" class=" hidden mt-6 bg-red-600 hover:bg-red-700 text-white py-2 px-4 mb-2 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 flex items-center justify-center">
+                                    <span class="mr-2">Eliminar</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
+                                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
+                                    </svg>
+                                </button>
                             </div>
                         </div>
+
                         <div id="image-list" class="space-y-8"></div>
                     </div>
                 </div>
@@ -60,7 +59,6 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-    <script src="View/static/js/disenarimg.js"></script>
     <!-- Bootstrap core JavaScript-->
     <script src="View/static/vendor/jquery/jquery.min.js"></script>
     <script src="View/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -70,6 +68,7 @@
     <!-- Custom scripts for all pages-->
     <script src="View/static/js/sb-admin-2.min.js"></script>
     <script type="text/javascript" src="View/static/js/listarimagenes.js"></script>
+    <script type="text/javascript" src="View/static/js/deleteimgs.js"></script>
 
 </body>
 

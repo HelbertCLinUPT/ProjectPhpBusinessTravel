@@ -63,7 +63,7 @@
                             </div>
                             <div class="flex-grow ml-4">
                                 <div class="relative w-full">
-                                    <input type="text" class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10" name="consulta" placeholder="Ingrese su busqueda, puede ser un país o lugar" />
+                                    <input type="text" class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10" name="consulta" placeholder="Ingrese su búsqueda, puede ser un país o lugar" />
                                 </div>
                             </div>
                             <div class="ml-4 mt-3">
@@ -90,6 +90,7 @@
                             </div>
                         </div>
                     </div>
+
 
 
                 </div>
